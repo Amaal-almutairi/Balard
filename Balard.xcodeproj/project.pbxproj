@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFE82968839100B27F46 /* BalardApp.swift */; };
-		E0C6DFEB2968839100B27F46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFEA2968839100B27F46 /* ContentView.swift */; };
 		E0C6DFED2968839200B27F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEC2968839200B27F46 /* Assets.xcassets */; };
 		E0C6DFF02968839200B27F46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEF2968839200B27F46 /* Preview Assets.xcassets */; };
+		E0C6DFF8296883BD00B27F46 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFF6296883BD00B27F46 /* DataBase.xcdatamodeld */; };
+		E0C6E001296884BE00B27F46 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6E000296884BE00B27F46 /* Items.swift */; };
+		E0C6E002296884BE00B27F46 /* CardCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFFF296884BE00B27F46 /* CardCustomView.swift */; };
+		E0C6E003296884BE00B27F46 /* GoalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFFE296884BE00B27F46 /* GoalList.swift */; };
+		E0C6E004296884BE00B27F46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFFD296884BE00B27F46 /* ContentView.swift */; };
+		E0C6E00B2968857D00B27F46 /* GoalCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6E00A2968857D00B27F46 /* GoalCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E0C6DFE52968839100B27F46 /* Balard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6DFE82968839100B27F46 /* BalardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalardApp.swift; sourceTree = "<group>"; };
-		E0C6DFEA2968839100B27F46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E0C6DFEC2968839200B27F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0C6DFEF2968839200B27F46 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E0C6DFF7296883BD00B27F46 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		E0C6DFFD296884BE00B27F46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E0C6DFFE296884BE00B27F46 /* GoalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalList.swift; sourceTree = "<group>"; };
+		E0C6DFFF296884BE00B27F46 /* CardCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCustomView.swift; sourceTree = "<group>"; };
+		E0C6E000296884BE00B27F46 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		E0C6E00A2968857D00B27F46 /* GoalCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,11 @@
 			isa = PBXGroup;
 			children = (
 				E0C6DFE82968839100B27F46 /* BalardApp.swift */,
-				E0C6DFEA2968839100B27F46 /* ContentView.swift */,
+				E0C6E0082968850300B27F46 /* Extension */,
+				E0C6E0092968852500B27F46 /* Model */,
+				E0C6E006296884E200B27F46 /* View */,
+				E0C6E007296884EF00B27F46 /* ViewModel */,
+				E0C6DFF6296883BD00B27F46 /* DataBase.xcdatamodeld */,
 				E0C6DFEC2968839200B27F46 /* Assets.xcassets */,
 				E0C6DFEE2968839200B27F46 /* Preview Content */,
 			);
@@ -65,6 +79,39 @@
 				E0C6DFEF2968839200B27F46 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E0C6E006296884E200B27F46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0C6DFFF296884BE00B27F46 /* CardCustomView.swift */,
+				E0C6DFFD296884BE00B27F46 /* ContentView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E0C6E007296884EF00B27F46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0C6E00A2968857D00B27F46 /* GoalCardViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		E0C6E0082968850300B27F46 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E0C6E000296884BE00B27F46 /* Items.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		E0C6E0092968852500B27F46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0C6DFFE296884BE00B27F46 /* GoalList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0C6DFEB2968839100B27F46 /* ContentView.swift in Sources */,
+				E0C6E003296884BE00B27F46 /* GoalList.swift in Sources */,
 				E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */,
+				E0C6E00B2968857D00B27F46 /* GoalCardViewModel.swift in Sources */,
+				E0C6E004296884BE00B27F46 /* ContentView.swift in Sources */,
+				E0C6E001296884BE00B27F46 /* Items.swift in Sources */,
+				E0C6DFF8296883BD00B27F46 /* DataBase.xcdatamodeld in Sources */,
+				E0C6E002296884BE00B27F46 /* CardCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +391,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E0C6DFF6296883BD00B27F46 /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E0C6DFF7296883BD00B27F46 /* DataBase.xcdatamodel */,
+			);
+			currentVersion = E0C6DFF7296883BD00B27F46 /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E0C6DFDD2968839100B27F46 /* Project object */;
 }
