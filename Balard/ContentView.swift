@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-   @State private var showAddGoalSheet = false
+    @State private var showAddGoalSheet = false
     @State var Name = ""
-    @State var Goal = ""
+    @State var GoalBalance = ""
     @State var Months = ""
     @Environment(\.presentationMode) var presentationMode
     @StateObject var goalVM:GoalCardViewModel = GoalCardViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack{
                 Color("lightGray")
                     .ignoresSafeArea()
                 ScrollView {
-                 CardCustomView()
+                    CardCustomView()
                 }
                 .navigationBarTitle(Text("Explore"))
                 .navigationBarItems(trailing:
-                   HStack {
+                                        HStack {
                     Image(systemName: "plus")
                         .foregroundColor(Color("lightGreen"))
                         .padding(.leading)
@@ -41,7 +42,7 @@ struct ContentView: View {
                                     } .padding()
                                     VStack(alignment: .leading){
                                         Text("Goal")
-                                        TextField("Add The Goal $", text: $Goal)
+                                        TextField("Add The Goal $", text: $GoalBalance)
                                             .modifier(Items.TextFieldModifier())
                                     }.padding().keyboardType(.numberPad)
                                     VStack(alignment: .leading){
@@ -50,19 +51,20 @@ struct ContentView: View {
                                             .modifier(Items.TextFieldModifier())
                                     }.padding().keyboardType(.numberPad)
                                     Button("Add") {
+                                        goalVM.addCardGoal(goalName: Name, goalBalance: GoalBalance, months: Months)
                                         presentationMode.wrappedValue.dismiss()
                                     }.modifier(Items.ButtonModifier())
                                 }
-                              
+                                
                             }
                         }
-                } .modifier(Items.addGoalBtnModifier())
+                } .modifier(Items.AddGoalBtnModifier())
                 )
             }
             .environmentObject(goalVM)
         }
-      }
-
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

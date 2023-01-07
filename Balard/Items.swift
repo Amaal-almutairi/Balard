@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Items: View {
-    struct addGoalBtnModifier: ViewModifier {
+    struct AddGoalBtnModifier: ViewModifier {
         
         func body(content: Content) -> some View {
             content
@@ -31,6 +31,17 @@ struct Items: View {
                 .padding()
         }
     }
+    struct CardShapModifier: ViewModifier {
+        
+        func body(content: Content) -> some View {
+            content
+                .frame(width: 328, height: 168)
+//                .background(Color("darkBlue"))
+                .cornerRadius(20)
+//                .foregroundColor(.white)
+        }
+    }
+    
     struct TextFieldModifier: ViewModifier {
         func body(content: Content) -> some View {
             content
@@ -45,12 +56,12 @@ struct Items: View {
             
         }
     }
-    struct TextModifier: ViewModifier {
-        
+    struct TextStyleModifier: ViewModifier {
         func body(content: Content) -> some View {
             content
-                .font(.largeTitle)
-                .foregroundColor(.black)
+                .font(.headline)
+                .foregroundColor(.white)
+            
         }
     }
     

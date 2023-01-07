@@ -1,25 +1,43 @@
-////
-////  CardCustomView.swift
-////  Balance-Guard
-////
-////  Created by Amaal Almutairi on 13/06/1444 AH.
-////
 //
-//import SwiftUI
+//  CardCustomView.swift
+//  Balance-Guard
 //
-//struct CardCustomView: View {
-//    @State private var progress = 0.75
-//    @EnvironmentObject var cardCustomVM:GoalCardViewModel
-//    var body: some View {
-//        VStack{
-//           // ForEach(cardCustomVM.goalCards) { goalCard in
+//  Created by Amaal Almutairi on 13/06/1444 AH.
+//
+
+import SwiftUI
+import CoreData
+
+struct CardCustomView: View {
+    @State private var progress = 0.75
+    @EnvironmentObject var cardCustomVM:GoalCardViewModel
+    var body: some View {
+        VStack{
+            ZStack{
+                Color("darkBlue")
+                .modifier(Items.CardShapModifier())
+            }
+            List{
+                ForEach(cardCustomVM.goalCards, id: \.self){ CardGoal in
+                    Text(CardGoal.name ?? "No goal")
+                   .modifier(Items.TextStyleModifier())
+                }
+            }
+        }
+        
+//  VStack{
+//        ZStack{
+//            Color("darkBlue")
+//                .modifier(Items.CardShapModifier())
+//
+//            ForEach(cardCustomVM.goalCards, id: \.self) { goalCard in
 //                HStack{
-//                    Text(" name \(goalCard.name)")
+//                    Text(goalCard.name ?? "No goal")
+//                        .modifier(Items.TextStyleModifier())
 //                    Spacer()
 //                    VStack{
-//
-//                        Text(" goalBalance \(goalCard.goalBalance)")
-//                        Text(" balance \(goalCard.balance)")
+//                        Text(goalCard.goalBalance ?? "No balanceGoal")
+//                        Text(goalCard.balance ?? "No balance")
 //                    }   .padding(.top,30).padding(.trailing)
 //
 //                } .padding(.leading) .padding(.top,20)
@@ -31,7 +49,7 @@
 //
 //
 //                }.padding()
-//                //  Divider()
+//                Divider()
 //                VStack(alignment: .leading){
 //                    HStack{
 //                        Button {
@@ -41,20 +59,20 @@
 //                            Spacer()
 //                            Image(systemName: "arrow.forward")
 //                        }
-//                        Divider()
+//
 //                    }.padding().padding(.bottom,30)
 //
 //                }
-//          //  }
-//
-//
-//        }     .frame(width: 328, height: 168) .background(Color("darkBlue")).cornerRadius(20).foregroundColor(.white) }
-//    }
-////}
-//
-//struct CardCustomView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardCustomView()
-//            .environmentObject(GoalCardViewModel())
-//    }
-//}
+//            }
+//        }
+//        }
+        }
+    }
+
+
+struct CardCustomView_Previews: PreviewProvider {
+    static var previews: some View {
+        CardCustomView()
+            .environmentObject(GoalCardViewModel())
+    }
+}
