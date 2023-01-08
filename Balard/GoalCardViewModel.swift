@@ -16,7 +16,7 @@ class GoalCardViewModel:ObservableObject{
     
     
     init() {
-        container = NSPersistentContainer(name: "DataBase")
+        container = NSPersistentContainer(name: "Balard")
         container.loadPersistentStores { description, error in
             if let error = error {
                 print("error \(error)")
@@ -38,13 +38,14 @@ class GoalCardViewModel:ObservableObject{
     
     func addCardGoal(goalName:String,goalBalance:String,months:String){
         let newCardGoal = GoalCards(context: container.viewContext)
+        newCardGoal.id = UUID()
         newCardGoal.name = goalName
         newCardGoal.goalBalance = goalBalance
         newCardGoal.months = months
-        saveCardGoal()
+        saveCardGoal(newCardGoal: newCardGoal)
     }
     
-    func saveCardGoal(){
+    func saveCardGoal(newCardGoal: GoalCards){
         do {
             try container.viewContext.save()
             getCard()

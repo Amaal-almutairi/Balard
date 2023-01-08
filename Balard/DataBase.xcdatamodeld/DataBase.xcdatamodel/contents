@@ -3,6 +3,7 @@
     <entity name="GoalCards" representedClassName="GoalCards" syncable="YES" codeGenerationType="class">
         <attribute name="balance" optional="YES" attributeType="String"/>
         <attribute name="goalBalance" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="months" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
