@@ -16,7 +16,7 @@ class GoalCardViewModel:ObservableObject{
     
     
     init() {
-        container = NSPersistentContainer(name: "Balard")
+        container = NSPersistentContainer(name: "DataBase")
         container.loadPersistentStores { description, error in
             if let error = error {
                 print("error \(error)")
@@ -35,7 +35,12 @@ class GoalCardViewModel:ObservableObject{
             print("error fetching Data \(error)")
         }
     }
-    
+    /*
+     if let str = zipField.text,
+         let zip = Int16(str) {
+         address?.zip = zip
+     }
+     */
     func addCardGoal(goalName:String,goalBalance:String,months:String){
         let newCardGoal = GoalCards(context: container.viewContext)
         newCardGoal.id = UUID()
@@ -54,4 +59,12 @@ class GoalCardViewModel:ObservableObject{
 
         }
     }
+
+    func deleteCard(Index:IndexSet){
+        guard let index = Index.first else{return}
+        let goalCard = goalCards[index]
+        container.viewContext.delete(goalCard)
+        saveCardGoal(newCardGoal: goalCard)
+    }
 }
+

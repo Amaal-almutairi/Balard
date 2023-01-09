@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01585A9296BECD4004AFF83 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01585A8296BECD4004AFF83 /* test.swift */; };
 		E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFE82968839100B27F46 /* BalardApp.swift */; };
 		E0C6DFED2968839200B27F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEC2968839200B27F46 /* Assets.xcassets */; };
 		E0C6DFF02968839200B27F46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEF2968839200B27F46 /* Preview Assets.xcassets */; };
@@ -16,9 +17,11 @@
 		E0C6E003296884BE00B27F46 /* GoalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFFE296884BE00B27F46 /* GoalList.swift */; };
 		E0C6E004296884BE00B27F46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFFD296884BE00B27F46 /* ContentView.swift */; };
 		E0C6E00B2968857D00B27F46 /* GoalCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6E00A2968857D00B27F46 /* GoalCardViewModel.swift */; };
+		E0C6E038296B32C300B27F46 /* NumberOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6E037296B32C300B27F46 /* NumberOnly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E01585A8296BECD4004AFF83 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		E0C6DFE52968839100B27F46 /* Balard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6DFE82968839100B27F46 /* BalardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalardApp.swift; sourceTree = "<group>"; };
 		E0C6DFEC2968839200B27F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		E0C6DFFF296884BE00B27F46 /* CardCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCustomView.swift; sourceTree = "<group>"; };
 		E0C6E000296884BE00B27F46 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		E0C6E00A2968857D00B27F46 /* GoalCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardViewModel.swift; sourceTree = "<group>"; };
+		E0C6E037296B32C300B27F46 /* NumberOnly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOnly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C6DFFF296884BE00B27F46 /* CardCustomView.swift */,
+				E01585A8296BECD4004AFF83 /* test.swift */,
 				E0C6DFFD296884BE00B27F46 /* ContentView.swift */,
 			);
 			name = View;
@@ -94,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C6E00A2968857D00B27F46 /* GoalCardViewModel.swift */,
+				E0C6E037296B32C300B27F46 /* NumberOnly.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -188,8 +194,10 @@
 				E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */,
 				E0C6E00B2968857D00B27F46 /* GoalCardViewModel.swift in Sources */,
 				E0C6E004296884BE00B27F46 /* ContentView.swift in Sources */,
+				E01585A9296BECD4004AFF83 /* test.swift in Sources */,
 				E0C6E001296884BE00B27F46 /* Items.swift in Sources */,
 				E0C6DFF8296883BD00B27F46 /* DataBase.xcdatamodeld in Sources */,
+				E0C6E038296B32C300B27F46 /* NumberOnly.swift in Sources */,
 				E0C6E002296884BE00B27F46 /* CardCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

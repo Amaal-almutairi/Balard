@@ -14,7 +14,7 @@ struct BalardApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(goalCardVM)
+                .environment(\.managedObjectContext, goalCardVM.container.viewContext)
 
             
         }
