@@ -19,6 +19,10 @@
 		E0C6E00B2968857D00B27F46 /* GoalCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6E00A2968857D00B27F46 /* GoalCardViewModel.swift */; };
 		E0C6E038296B32C300B27F46 /* NumberOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6E037296B32C300B27F46 /* NumberOnly.swift */; };
 		E0ECAAA3296C88CF00537DA5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0ECAAA5296C88CF00537DA5 /* Localizable.strings */; };
+		E0ECAAAC296D5D5B00537DA5 /* ProgressPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAAB296D5D5B00537DA5 /* ProgressPage.swift */; };
+		E0ECAAAE296D60E200537DA5 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAAD296D60E200537DA5 /* BottomSheetView.swift */; };
+		E0ECAAB0296D617A00537DA5 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAAF296D617A00537DA5 /* ProgressBar.swift */; };
+		E0ECAAB2296D76F300537DA5 /* AddGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		E0C6E037296B32C300B27F46 /* NumberOnly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOnly.swift; sourceTree = "<group>"; };
 		E0ECAAA4296C88CF00537DA5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0ECAAA6296C88D500537DA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E0ECAAAB296D5D5B00537DA5 /* ProgressPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPage.swift; sourceTree = "<group>"; };
+		E0ECAAAD296D60E200537DA5 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		E0ECAAAF296D617A00537DA5 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,10 @@
 				E0C6DFFF296884BE00B27F46 /* CardCustomView.swift */,
 				E01585A8296BECD4004AFF83 /* test.swift */,
 				E0C6DFFD296884BE00B27F46 /* ContentView.swift */,
+				E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */,
+				E0ECAAAB296D5D5B00537DA5 /* ProgressPage.swift */,
+				E0ECAAAF296D617A00537DA5 /* ProgressBar.swift */,
+				E0ECAAAD296D60E200537DA5 /* BottomSheetView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -197,13 +209,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0C6E003296884BE00B27F46 /* GoalList.swift in Sources */,
+				E0ECAAAC296D5D5B00537DA5 /* ProgressPage.swift in Sources */,
 				E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */,
 				E0C6E00B2968857D00B27F46 /* GoalCardViewModel.swift in Sources */,
+				E0ECAAB2296D76F300537DA5 /* AddGoalSheet.swift in Sources */,
 				E0C6E004296884BE00B27F46 /* ContentView.swift in Sources */,
 				E01585A9296BECD4004AFF83 /* test.swift in Sources */,
 				E0C6E001296884BE00B27F46 /* Items.swift in Sources */,
 				E0C6DFF8296883BD00B27F46 /* DataBase.xcdatamodeld in Sources */,
+				E0ECAAAE296D60E200537DA5 /* BottomSheetView.swift in Sources */,
 				E0C6E038296B32C300B27F46 /* NumberOnly.swift in Sources */,
+				E0ECAAB0296D617A00537DA5 /* ProgressBar.swift in Sources */,
 				E0C6E002296884BE00B27F46 /* CardCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

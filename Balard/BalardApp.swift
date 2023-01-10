@@ -13,11 +13,11 @@ struct BalardApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+         //  NavigationView {
                 ContentView()
                 // .environment(\.managedObjectContext, goalCardVM.container.viewContext)
                     .environmentObject(goalCardVM)
-            }
+        //  }
         }
     }
 }

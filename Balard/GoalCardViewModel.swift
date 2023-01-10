@@ -13,7 +13,7 @@ class GoalCardViewModel:ObservableObject{
     
     let container: NSPersistentContainer
     @Published var goalCards:[GoalCards] = []
-    
+   // @Published var balanceArr : [String] = []
     
     init() {
         container = NSPersistentContainer(name: "DataBase")
@@ -46,6 +46,10 @@ class GoalCardViewModel:ObservableObject{
          address?.zip = zip
      }
      */
+    
+    
+    // this function allow user to add goalName,goalBalance,months to achive the goal balance
+
     func addCardGoal(goalName:String,goalBalance:String,months:String){
         let newCardGoal = GoalCards(context: container.viewContext)
         newCardGoal.id = UUID()
@@ -60,25 +64,27 @@ class GoalCardViewModel:ObservableObject{
 
         do {
             try container.viewContext.save()
-           // getCard()
         }catch let error {
             print("error fetching Data \(error)")
 
         }
     }
-//    func update(){
-//        do {
-//            try container.viewContext.save()
-//        }catch{
-//            container.viewContext.rollback()
-//        }
-//    }
+    // this function allow user to add balance to achive the goal balance
+    func AddAmount(balance:String) {
+        let newbalance = GoalCards(context: container.viewContext)
+        newbalance.id = UUID()
+        newbalance.balance = balance
+        saveCardGoal(newCardGoal: newbalance)
+        getCard()
+    }
     func deleteCard(Index:IndexSet){
         guard let index = Index.first else{return}
         let goalCard = goalCards[index]
         container.viewContext.delete(goalCard)
         getCard()
-      //  saveCardGoal(newCardGoal: goalCard)
+       saveCardGoal(newCardGoal: goalCard)
     }
+    
+
 }
 
