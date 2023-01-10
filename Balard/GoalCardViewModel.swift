@@ -24,13 +24,18 @@ class GoalCardViewModel:ObservableObject{
                 print("Successfully loaded")
             }
         }
-        getCard()
+       getCard()
     }
 
     func getCard(){
+        
+        
+        goalCards = []
+        
         let request = NSFetchRequest<GoalCards>(entityName: "GoalCards")
         do {
             goalCards = try container.viewContext.fetch(request)
+            
         }catch let error {
             print("error fetching Data \(error)")
         }
@@ -48,23 +53,32 @@ class GoalCardViewModel:ObservableObject{
         newCardGoal.goalBalance = goalBalance
         newCardGoal.months = months
         saveCardGoal(newCardGoal: newCardGoal)
+        getCard()
+       // goalCards = []
     }
-    
-    func saveCardGoal(newCardGoal: GoalCards){
+     func saveCardGoal(newCardGoal: GoalCards){
+
         do {
             try container.viewContext.save()
-            getCard()
+           // getCard()
         }catch let error {
             print("error fetching Data \(error)")
 
         }
     }
-
+//    func update(){
+//        do {
+//            try container.viewContext.save()
+//        }catch{
+//            container.viewContext.rollback()
+//        }
+//    }
     func deleteCard(Index:IndexSet){
         guard let index = Index.first else{return}
         let goalCard = goalCards[index]
         container.viewContext.delete(goalCard)
-        saveCardGoal(newCardGoal: goalCard)
+        getCard()
+      //  saveCardGoal(newCardGoal: goalCard)
     }
 }
 

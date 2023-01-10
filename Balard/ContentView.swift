@@ -10,38 +10,37 @@ import SwiftUI
 struct ContentView: View {
     @State private var showAddGoalSheet = false
     @State var name = ""
-    @State var goalBalance = "3000"
-    @State var months = "3"
+    @State var goalBalance = ""
+    @State var months = ""
     @Environment(\.presentationMode) var dismiss
     @State var presentCardGoalView = false
-
-//    @Environment(\.presentationMode) var presentationMode
-//    @Environment(\.managedObjectContext) var contextObject
-    @StateObject var goalVM:GoalCardViewModel = GoalCardViewModel()
+    
+    //    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var goalVM:GoalCardViewModel
     @StateObject var numberOnly:NumbersOnly = NumbersOnly()
-
+    
     
     
     var body: some View {
-        NavigationView {
-//            if goalVM.goalCards !== nil {
-//                CardCustomView()
-//            }else{
-//                Text("No Goals Tap  ‘Add Goal’  to start saving your money  and achive your goals").lineLimit(nil)
-//
-//            }
-            ZStack{
-                Color("lightGray")
-                    .ignoresSafeArea()
-                Form {
+        // NavigationView {
+        VStack{
+            VStack{
                 
-                    ForEach(goalVM.goalCards) {cardGoal in
-                        CardCustomView()
-                    } .onDelete(perform:goalVM.deleteCard)
-                        .environmentObject(goalVM)
-                       
+                if goalVM.goalCards.isEmpty {
+                    Text("No Goals Tap  ‘Add Goal’  to start saving your money  and achive your goals").lineLimit(nil)
+                    
+                }else{
+                    Form {
+                        ForEach(goalVM.goalCards, id: \.id) {cardGoal in
+                            CardCustomView(goalCard: cardGoal)
+                        } .onDelete(perform:goalVM.deleteCard)
+                        
+                        // .environmentObject(goalVM)
+                        
+                    }
                 }
-                .navigationBarTitle(Text("Explore"))
+                
+            }  .navigationBarTitle(Text("Explore"))
                 .navigationBarItems(trailing:
                                         HStack {
                     Image(systemName: "plus")
@@ -57,31 +56,32 @@ struct ContentView: View {
                                         Text("Name")
                                         TextField("Name Of Your Goal", text: $name)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                                          //  .modifier(Items.TextFieldModifier())
+                                        //  .modifier(Items.TextFieldModifier())
                                     } .padding()
                                     VStack(alignment: .leading){
                                         Text("Goal")
                                         TextField("Add The Goal $", text: $numberOnly.goalBalancevalue)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                                            //.modifier(Items.TextFieldModifier())
+                                        //.modifier(Items.TextFieldModifier())
                                     }.padding().keyboardType(.decimalPad)
                                     VStack(alignment: .leading){
                                         Text("Months")
                                         TextField("Add The Month", text: $numberOnly.monthsvalue)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                                            //.modifier(Items.TextFieldModifier())
+                                        //.modifier(Items.TextFieldModifier())
                                     }.padding().keyboardType(.numberPad)
-                                    Button("Add") {
-//                                        let goalBalance:Int = Int(goalBalance) ?? 0
-//                                        let months:Int = Int(months) ?? 0
+                                    Button("Create") {
                                         goalVM.addCardGoal(goalName: name, goalBalance:  numberOnly.goalBalancevalue, months:numberOnly.monthsvalue)
-//                                        goalVM.addCardGoal(goalName: name, goalBalance: Int(goalBalance), months: Int(months))
-                                       // goalVM.addCardGoal(goalName: <#T##String#>, goalBalance: <#T##Int16#>, months: <#T##Int16#>)
                                         goalVM.getCard()
+                                        name = ""
+                                        numberOnly.goalBalancevalue = ""
+                                        numberOnly.monthsvalue = ""
                                         presentCardGoalView = true
-                                       // presentCardGoalView.toggle()
-                                        CardCustomView()
-                                        dismiss.wrappedValue.dismiss()
+                                        
+                                        print("add new goal")
+                                        // presentCardGoalView.toggle()
+                                        // CardCustomView()
+                                        showAddGoalSheet = false
                                     }.modifier(Items.ButtonModifier())
                                 }
                                 
@@ -89,7 +89,10 @@ struct ContentView: View {
                         }
                 } .modifier(Items.AddGoalBtnModifier())
                 )
-            }
+            
+        }
+        .onAppear(){
+            goalVM.getCard()
         }
     }
     
@@ -97,10 +100,76 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     
-    //
     static var previews: some View {
-       // ContentView()
         let goalVM:GoalCardViewModel = GoalCardViewModel()
         ContentView().environmentObject(goalVM)
     }
 }
+//            ZStack{
+//                Color("lightGray")
+//                    .ignoresSafeArea()
+//                VStack{
+//                    Form {
+//
+//                        ForEach(goalVM.goalCards) {cardGoal in
+//                            CardCustomView()
+//                        } .onDelete(perform:goalVM.deleteCard)
+//                        // .environmentObject(goalVM)
+//
+//                    }
+//                    .navigationBarTitle(Text("Explore"))
+//                    .navigationBarItems(trailing:
+//                                            HStack {
+//                        Image(systemName: "plus")
+//                            .foregroundColor(Color("lightGreen"))
+//                            .padding(.leading)
+//                        Button("Add Goal") {
+//                            showAddGoalSheet.toggle()
+//                        }.foregroundColor(.black).padding(.trailing)
+//                            .sheet(isPresented: $showAddGoalSheet){
+//                                Form{
+//                                    VStack(alignment: .leading){
+//                                        VStack(alignment: .leading){
+//                                            Text("Name")
+//                                            TextField("Name Of Your Goal", text: $name)
+//                                                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                                            //  .modifier(Items.TextFieldModifier())
+//                                        } .padding()
+//                                        VStack(alignment: .leading){
+//                                            Text("Goal")
+//                                            TextField("Add The Goal $", text: $numberOnly.goalBalancevalue)
+//                                                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                                            //.modifier(Items.TextFieldModifier())
+//                                        }.padding().keyboardType(.decimalPad)
+//                                        VStack(alignment: .leading){
+//                                            Text("Months")
+//                                            TextField("Add The Month", text: $numberOnly.monthsvalue)
+//                                                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                                            //.modifier(Items.TextFieldModifier())
+//                                        }.padding().keyboardType(.numberPad)
+//                                        Button("Add") {
+//                                           goalVM.addCardGoal(goalName: name, goalBalance:  numberOnly.goalBalancevalue, months:numberOnly.monthsvalue)
+//                                            // goalVM.update()
+//                                            // goalVM.getCard()
+//                                            print("add new goal 2")
+//
+//                                            name = ""
+//                                            goalBalance = ""
+//                                            months = ""
+//                                            presentCardGoalView = true
+//
+//                                            // presentCardGoalView.toggle()
+//                                            // CardCustomView()
+//                                            dismiss.wrappedValue.dismiss()
+//                                        }.modifier(Items.ButtonModifier())
+//                                    }
+//
+//                                }
+//                            }
+//                    } .modifier(Items.AddGoalBtnModifier())
+//
+//                    )
+//                }
+//            }
+//
+//        }

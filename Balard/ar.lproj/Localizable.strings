@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Balard
+
+  Created by Amaal Almutairi on 16/06/1444 AH.
+  
+*/
+"Explore" = "استكشف";
+"Add Goal" = "إضافة هدف";
+"Name" = "الاسم";
+"Name Of Your Goal" = "اسم الهدف";
+"Goal" = "الهدف";
+"Add The Goal $" = "أضف المبلغ المراد تجمعيه ";
+"Months" = "عدد الاشهر";
+"Add" = "إضافة";
+"Add The Month" = "أضف عدد الأشهر";
+"100" = "١٠٠";
+"No Goals Tap  ‘Add Goal’  to start saving your money  and achive your goals" =
+"اضغط على “ إضافة هدف “ لتبدأ بادخار مالك وتحقيق اهدافك
+";
+"View More" = "المزيد";
+
