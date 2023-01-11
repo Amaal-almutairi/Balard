@@ -19,7 +19,6 @@ struct CardCustomView: View {
 //    @State var totalAmount =
     var body: some View {
         VStack{
-         //   ForEach(cardCustomVM.goalCards, id: \.self) { goalCard in
                 ZStack{
                     Color("darkBlue")
                         .background()
@@ -41,7 +40,7 @@ struct CardCustomView: View {
                               
                         }
                         VStack{
-                            Text(goalCard.balance ?? "No balance")
+                            Text("\(goalCard.balance)")
                                 //.modifier(Items.TextStyleModifier())
                                 .font(.system(size:16 , weight: .regular))
                                 .foregroundColor(Color("ourgrey"))
@@ -73,31 +72,14 @@ struct CardCustomView: View {
                             Text("View More")
                         }
 
-//                        NavigationLink(destination: ProgressPage(), isActive: $presentProgressView) { }
-//
-//                        HStack(alignment: .center){
-//                            Button(""){
-//                                presentProgressView = true
-//                              //  showCardGoalView = false
-//                            }
-//
-//
-//                        } .accessibilityLabel("View More")
-//                            .accessibilityHint("Tap this card to navigate you to Add Your Balance ")
-//                        .foregroundColor(.white)
                         
                     }.padding(.leading).padding(.trailing)
                 }.frame(width: 328, height: 168).foregroundColor(.white)
-   // }
         }
         .fullScreenCover(isPresented: $presentProgressView){
             ProgressPage( goalCard: goalCard, goalCards: goalCard)
            
         }
-//        .onAppear{
-//          //  cardCustomVM.getCard()
-//            
-//        }
     }
     
     

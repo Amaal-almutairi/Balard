@@ -76,12 +76,12 @@
 		E0C6DFE72968839100B27F46 /* Balard */ = {
 			isa = PBXGroup;
 			children = (
+				E0C6DFF6296883BD00B27F46 /* DataBase.xcdatamodeld */,
+				E0C6DFEC2968839200B27F46 /* Assets.xcassets */,
 				E0C6DFE82968839100B27F46 /* BalardApp.swift */,
 				E0C6E0082968850300B27F46 /* Extension */,
 				E0C6E006296884E200B27F46 /* View */,
 				E0C6E007296884EF00B27F46 /* ViewModel */,
-				E0C6DFF6296883BD00B27F46 /* DataBase.xcdatamodeld */,
-				E0C6DFEC2968839200B27F46 /* Assets.xcassets */,
 				E0C6DFEE2968839200B27F46 /* Preview Content */,
 			);
 			path = Balard;

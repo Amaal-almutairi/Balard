@@ -13,7 +13,6 @@ class GoalCardViewModel:ObservableObject{
     
     let container: NSPersistentContainer
     @Published var goalCards:[GoalCards] = []
-   // @Published var balanceArr : [String] = []
     
     init() {
         container = NSPersistentContainer(name: "DataBase")
@@ -40,14 +39,6 @@ class GoalCardViewModel:ObservableObject{
             print("error fetching Data \(error)")
         }
     }
-    /*
-     if let str = zipField.text,
-         let zip = Int16(str) {
-         address?.zip = zip
-     }
-     */
-    
-    
     // this function allow user to add goalName,goalBalance,months to achive the goal balance
 
     func addCardGoal(goalName:String,goalBalance:String,months:String){
@@ -70,8 +61,9 @@ class GoalCardViewModel:ObservableObject{
         }
     }
 //     this function allow user to add balance to achive the goal balance
-    func AddAmount(balance:String,goalCard:GoalCards ) {
-        goalCard.balance = balance
+    func AddAmount(balance:Int ,goalCard:GoalCards ) {
+        
+        goalCard.balance += Int64(balance)
         saveCardGoal(newCardGoal: goalCard)
         getCard()
     }

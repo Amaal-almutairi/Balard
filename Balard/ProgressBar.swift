@@ -19,7 +19,7 @@ struct ProgressBar: View {
                //first circle which display the remining of the progress
                VStack{
                   // ForEach( progressVM.goalCards, id: \.id){ goal in
-                   Text(goalCard.balance ?? "0")
+                   Text("\(goalCard.balance)")
                   // Text(goalCard.balance ?? "")
                            .foregroundColor(Color("darkBlue"))
                            .font(.system(size: 36,weight: .regular))

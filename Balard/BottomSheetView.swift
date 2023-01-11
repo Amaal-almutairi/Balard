@@ -14,7 +14,7 @@ struct BottomSheetView: View {
     @Binding var progressValue: Float
     @Environment(\.presentationMode) var presentationMode
     let goalCards:GoalCards
-    @State var otheramount = ""
+    @State var otheramount = "0"
   
     
 //    @State var dataArray : [String] = [] //create array to save the amounts tha the user will enter
@@ -34,6 +34,7 @@ struct BottomSheetView: View {
                         .multilineTextAlignment(.leading)
                 }
                 Section{
+//                    Text("\(Int(otheramount))")
                     TextField("Add $", text: $otheramount)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 351,height: 51)
@@ -47,7 +48,8 @@ struct BottomSheetView: View {
             }
             Button{
                 showingBottomSheet.toggle()
-                goalVM.AddAmount(balance: otheramount, goalCard: goalCards) // call the function to add and save the amount
+                let otheramountInt: Int = Int(otheramount) ?? 0
+                goalVM.AddAmount(balance: otheramountInt, goalCard: goalCards) // call the function to add and save the amount
                // BottomSheetVM.getCard()
                 otheramount = ""
                 
