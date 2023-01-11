@@ -23,11 +23,11 @@ struct Items: View {
             content
                 .font(.headline)
                 .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .frame(height: 41)
+               // .frame(maxWidth: .infinity)
+                .frame(width: 281 , height: 41 )
                 .background(Color.gray.opacity(0.1))
                 .background(Color("lightBlue"))
-                .cornerRadius(20)
+                .cornerRadius(8)
                 .padding()
         }
     }

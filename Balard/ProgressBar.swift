@@ -25,7 +25,7 @@ struct ProgressBar: View {
                            .font(.system(size: 36,weight: .regular))
                   // Text(goalCard.goalBalance ?? "")
                     Text(goalCard.goalBalance ?? "1")
-                           .foregroundColor(Color("lightGray"))
+                           .foregroundColor(Color("ourgrey"))
                            .font(.system(size: 24,weight: .regular))
                    //}
                }
@@ -43,6 +43,7 @@ struct ProgressBar: View {
                    .rotationEffect(Angle(degrees: 270)) //the prgress start at the top
                    .animation(.easeInOut(duration: 2.0))//two seconds
            }
+           .navigationTitle(goalCard.name ?? "")
        }
    }
 //struct ProgressBar_Previews: PreviewProvider {

@@ -14,6 +14,7 @@ struct AddGoalSheet: View {
     @StateObject var numberOnly:NumbersOnly = NumbersOnly()
     @EnvironmentObject var goalVM:GoalCardViewModel
     @State private var showAddGoalSheet = false
+    
   
     @Environment(\.presentationMode) var dismiss
     @State var presentCardGoalView = false
@@ -46,11 +47,13 @@ struct AddGoalSheet: View {
                     numberOnly.goalBalancevalue = ""
                     numberOnly.monthsvalue = ""
                     presentCardGoalView = true
+                    showAddGoalSheet.toggle()
+
                     
                     print("add new goal")
                   // presentCardGoalView.toggle()
                     // CardCustomView()
-                    showAddGoalSheet = false
+                    //showAddGoalSheet = false
                 }.modifier(Items.ButtonModifier())
             }
             

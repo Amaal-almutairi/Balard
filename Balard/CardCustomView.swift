@@ -16,7 +16,7 @@ struct CardCustomView: View {
     @Environment(\.presentationMode) var prezsentationMode
     @State var presentProgressView = false
     @State  var showCardGoalView = false
-    
+//    @State var totalAmount =
     var body: some View {
         VStack{
          //   ForEach(cardCustomVM.goalCards, id: \.self) { goalCard in
@@ -27,17 +27,24 @@ struct CardCustomView: View {
                     VStack(alignment: .trailing){
                         HStack{
                             Text(goalCard.name ?? "No goal")
+                               // .modifier(Items.TextStyleModifier())
+                                .font(.system(size:30 , weight: .medium))
                                 .accessibilityLabel("Your goal")
                                 .accessibilityValue(goalCard.name ?? "your goal")
                                 .accessibilityHint("Add your goal")
                             Spacer()
                             Text(goalCard.goalBalance ?? "goalBalance")
+                                //.modifier(Items.TextStyleModifier())
+                                .font(.system(size:21 , weight: .regular))
                                 .accessibilityLabel("goalBalance")
                                 .accessibilityValue(String(goalCard.name ?? "goalBalance"))
                               
                         }
                         VStack{
                             Text(goalCard.balance ?? "No balance")
+                                //.modifier(Items.TextStyleModifier())
+                                .font(.system(size:16 , weight: .regular))
+                                .foregroundColor(Color("ourgrey"))
                                 .accessibilityLabel("goalBalance")
                                 .accessibilityValue(String(goalCard.name ?? "No balance"))
                               
@@ -93,9 +100,12 @@ struct CardCustomView: View {
 //        }
     }
     
-    func printstatment(){
-        print(" Successfully Fetch \(goalVM.goalCards)")
-    }
+    
+    
+    
+//    func totalAmount(total:Int) -> Int{
+//       return total
+//    }
 }
 
 
