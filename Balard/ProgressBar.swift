@@ -24,7 +24,7 @@ struct ProgressBar: View {
                            .foregroundColor(Color("darkBlue"))
                            .font(.system(size: 36,weight: .regular))
                   // Text(goalCard.goalBalance ?? "")
-                    Text(goalCard.goalBalance ?? "1")
+                    Text("\(goalCard.goalBalance)")
                            .foregroundColor(Color("ourgrey"))
                            .font(.system(size: 24,weight: .regular))
                    //}

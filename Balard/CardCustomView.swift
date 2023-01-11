@@ -33,7 +33,7 @@ struct CardCustomView: View {
                                 .accessibilityValue(goalCard.name ?? "your goal")
                                 .accessibilityHint("Add your goal")
                             Spacer()
-                            Text(goalCard.goalBalance ?? "goalBalance")
+                            Text("\(goalCard.goalBalance)")
                                 //.modifier(Items.TextStyleModifier())
                                 .font(.system(size:21 , weight: .regular))
                                 .accessibilityLabel("goalBalance")

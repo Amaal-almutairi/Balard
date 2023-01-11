@@ -40,7 +40,10 @@ struct AddGoalSheet: View {
                     //.modifier(Items.TextFieldModifier())
                 }.padding().keyboardType(.numberPad)
                 Button("Text21") {
-                    goalVM.addCardGoal(goalName: name, goalBalance:  numberOnly.goalBalancevalue, months:numberOnly.monthsvalue)
+                    let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 0
+                    let monthInt: Int = Int(numberOnly.monthsvalue) ?? 0
+
+                    goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
                     goalVM.getCard()
                     name = ""
                     numberOnly.goalBalancevalue = ""

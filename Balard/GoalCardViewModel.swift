@@ -41,12 +41,12 @@ class GoalCardViewModel:ObservableObject{
     }
     // this function allow user to add goalName,goalBalance,months to achive the goal balance
 
-    func addCardGoal(goalName:String,goalBalance:String,months:String){
+    func addCardGoal(goalName:String,goalBalance:Int,months:Int){
         let newCardGoal = GoalCards(context: container.viewContext)
         newCardGoal.id = UUID()
         newCardGoal.name = goalName
-        newCardGoal.goalBalance = goalBalance
-        newCardGoal.months = months
+        newCardGoal.goalBalance = Int64(goalBalance)
+        newCardGoal.months = Int64(months)
         saveCardGoal(newCardGoal: newCardGoal)
         getCard()
        // goalCards = []

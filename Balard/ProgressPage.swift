@@ -16,7 +16,11 @@ struct ProgressPage: View {
    // @Binding var otheramount = ""
     //we
     let goalCards:GoalCards
-
+    
+    var totalAmount:Int64 {
+       var totalAmountGoal =  goalCards.goalBalance / goalCards.months
+        return totalAmountGoal
+    }
     var body: some View {
         
        // NavigationView{
@@ -29,7 +33,7 @@ struct ProgressPage: View {
                     
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(Color(.gray), lineWidth: 1)
-                        .frame(width:359 , height: 53)
+                        .frame(width:359 , height: 70)
                         .background(.white)
                         .overlay (
                             HStack{
@@ -37,7 +41,8 @@ struct ProgressPage: View {
                                     .font(.system(size: 24))
                                     .foregroundColor(Color("lightGreen"))
 //                                Text("You need to save 1500 per month in order to achieve this goal")//change the goal\
-                                Text("Text15")
+                                Text("You need to save per month \(totalAmount) in order to achieve this goal ")
+                               // Text("Text15")
                                     .font(.system(size: 18,weight: .regular))
                                     .foregroundColor(Color("darkBlue"))
                             }
@@ -93,7 +98,7 @@ struct ProgressPage: View {
                 }
              
             }
-            .navigationTitle("Vacation").navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(goalCards.name ?? "").navigationBarTitleDisplayMode(.inline)
             .foregroundColor(Color("darkBlue"))
            // .navigationBarTitle(Text("Vecation"))
           //  .navigationBarTitleDisplayMode(.large)

@@ -14,9 +14,14 @@ struct BottomSheetView: View {
     @Binding var progressValue: Float
     @Environment(\.presentationMode) var presentationMode
     let goalCards:GoalCards
+    
     @State var otheramount = ""
+    
   
     
+//    init(totalAmount:Int64, monthValue:Int64, totalAmountGoal:Int64){
+//        self.totalAmount = totalAmount
+//    }
 //    @State var dataArray : [String] = [] //create array to save the amounts tha the user will enter
     
     var body: some View{
@@ -30,6 +35,7 @@ struct BottomSheetView: View {
                     Image(systemName: "dollarsign.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color("lightGreen"))
+//                    Text("\(totalAmount)")
                     Text("Text15")
                         .multilineTextAlignment(.leading)
                 }
