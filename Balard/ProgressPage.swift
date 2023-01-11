@@ -89,7 +89,7 @@ struct ProgressPage: View {
                         .presentationDragIndicator(.visible) // this is for the line on the top of the sheet
                 }
             }
-            .navigationBarTitle(Text("Vecation"))
+            .navigationBarTitle(Text("Vacation"))
             .navigationBarTitleDisplayMode(.large)
             .foregroundColor(Color("darkBlue"))
       }
