@@ -35,7 +35,7 @@ struct AddGoalSheet: View {
                 }.padding().keyboardType(.decimalPad)
                 VStack(alignment: .leading){
                     Text("Text7")
-                    TextField("Text14", text: $numberOnly.monthsvalue)
+                    TextField("Text9", text: $numberOnly.monthsvalue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     //.modifier(Items.TextFieldModifier())
                 }.padding().keyboardType(.numberPad)
