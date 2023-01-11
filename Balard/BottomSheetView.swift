@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct BottomSheetView: View {
-    @EnvironmentObject var BottomSheetVM:GoalCardViewModel
+    @EnvironmentObject var goalVM:GoalCardViewModel
 
     @Binding var showingBottomSheet:Bool
     @Binding var progressValue: Float
     @Environment(\.presentationMode) var presentationMode
-
+    let goalCards:GoalCards
     @State var otheramount = ""
   
     
@@ -47,8 +47,8 @@ struct BottomSheetView: View {
             }
             Button{
                 showingBottomSheet.toggle()
-                BottomSheetVM.AddAmount(balance: otheramount) // call the function to add and save the amount
-                BottomSheetVM.getCard()
+                goalVM.AddAmount(balance: otheramount, goalCard: goalCards) // call the function to add and save the amount
+               // BottomSheetVM.getCard()
                 otheramount = ""
                 
                 if (progressValue) < 1.0{
@@ -84,11 +84,11 @@ struct BottomSheetView: View {
 //        }
         
     }
-struct BottomSheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        let BottomSheetVM = GoalCardViewModel()
-
-        ProgressPage()
-            .environmentObject(BottomSheetVM)
-    }
-}
+//struct BottomSheetView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let BottomSheetVM = GoalCardViewModel()
+//
+//        ProgressPage()
+//            .environmentObject(BottomSheetVM)
+//    }
+//}

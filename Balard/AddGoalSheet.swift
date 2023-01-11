@@ -48,7 +48,7 @@ struct AddGoalSheet: View {
                     presentCardGoalView = true
                     
                     print("add new goal")
-                    // presentCardGoalView.toggle()
+                  // presentCardGoalView.toggle()
                     // CardCustomView()
                     showAddGoalSheet = false
                 }.modifier(Items.ButtonModifier())

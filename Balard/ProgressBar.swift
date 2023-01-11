@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    @EnvironmentObject var progressVM:GoalCardViewModel
-//    let goalCard: GoalCards
+    @EnvironmentObject var goalVM:GoalCardViewModel
+   let goalCard: GoalCards
 
        @Binding var progress: Float //inserting the value that we want to update
        var color: Color = Color("lightBlue")
@@ -19,12 +19,12 @@ struct ProgressBar: View {
                //first circle which display the remining of the progress
                VStack{
                   // ForEach( progressVM.goalCards, id: \.id){ goal in
-                      Text( "2000")
+                   Text(goalCard.balance ?? "0")
                   // Text(goalCard.balance ?? "")
                            .foregroundColor(Color("darkBlue"))
                            .font(.system(size: 36,weight: .regular))
                   // Text(goalCard.goalBalance ?? "")
-                    Text("500000")
+                    Text(goalCard.goalBalance ?? "1")
                            .foregroundColor(Color("lightGray"))
                            .font(.system(size: 24,weight: .regular))
                    //}
@@ -45,10 +45,10 @@ struct ProgressBar: View {
            }
        }
    }
-struct ProgressBar_Previews: PreviewProvider {
-    static var previews: some View {
-        let progressVM = GoalCardViewModel()
-        ProgressPage()
-            .environmentObject(progressVM)
-    }
-}
+//struct ProgressBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let progressVM = GoalCardViewModel()
+//        ProgressPage()
+//            .environmentObject(progressVM)
+//    }
+//}

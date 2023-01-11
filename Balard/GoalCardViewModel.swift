@@ -69,12 +69,10 @@ class GoalCardViewModel:ObservableObject{
 
         }
     }
-    // this function allow user to add balance to achive the goal balance
-    func AddAmount(balance:String) {
-        let newbalance = GoalCards(context: container.viewContext)
-        newbalance.id = UUID()
-        newbalance.balance = balance
-        saveCardGoal(newCardGoal: newbalance)
+//     this function allow user to add balance to achive the goal balance
+    func AddAmount(balance:String,goalCard:GoalCards ) {
+        goalCard.balance = balance
+        saveCardGoal(newCardGoal: goalCard)
         getCard()
     }
     func deleteCard(Index:IndexSet){

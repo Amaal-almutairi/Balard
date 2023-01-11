@@ -12,14 +12,14 @@ struct CardCustomView: View {
     
     let goalCard: GoalCards
     @State private var progress:Float = 0.75
-    @EnvironmentObject var cardCustomVM: GoalCardViewModel
-    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var goalVM: GoalCardViewModel
+    @Environment(\.presentationMode) var prezsentationMode
     @State var presentProgressView = false
     @State  var showCardGoalView = false
     
     var body: some View {
         VStack{
-            ForEach(cardCustomVM.goalCards, id: \.self) { goalCard in
+         //   ForEach(cardCustomVM.goalCards, id: \.self) { goalCard in
                 ZStack{
                     Color("darkBlue")
                         .background()
@@ -27,16 +27,27 @@ struct CardCustomView: View {
                     VStack(alignment: .trailing){
                         HStack{
                             Text(goalCard.name ?? "No goal")
+                                .accessibilityLabel("Your goal")
+                                .accessibilityValue(goalCard.name ?? "your goal")
+                                .accessibilityHint("Add your goal")
                             Spacer()
                             Text(goalCard.goalBalance ?? "goalBalance")
+                                .accessibilityLabel("goalBalance")
+                                .accessibilityValue(String(goalCard.name ?? "goalBalance"))
+                              
                         }
                         VStack{
                             Text(goalCard.balance ?? "No balance")
+                                .accessibilityLabel("goalBalance")
+                                .accessibilityValue(String(goalCard.name ?? "No balance"))
+                              
                         }
                         HStack(alignment: .center){
                             ProgressView(value: progress) {
                             }   .modifier(Items.TextStyleModifier())
-                            Text("\(String(format: "%.0f%%", progress * 100))").foregroundColor(.white)
+                            Text("\(String(format: "%.0f%%", progress * 100))")
+                                .accessibilityValue("\(String(format: "%.0f%%", progress * 100))")
+                                .foregroundColor(.white)
                                
                                     .onAppear(){
                                         self.progress = 0.00 //intial value 30%
@@ -48,26 +59,33 @@ struct CardCustomView: View {
                                     }
                         }
                         Divider().foregroundColor(.gray).fontWeight(Font.Weight.medium)
-                        HStack(alignment: .center){
-                            Button {
-                                presentProgressView = true
-                                showCardGoalView = false
-                            } label: {
-                                HStack{
-                                    Text("View More")
-                                    Spacer()
-                                    Image(systemName: "arrow.forward")
-                                }
-                            }
-                            
-                        }.foregroundColor(.white)
+                    
+                        NavigationLink {
+                            ProgressPage(goalCard: goalCard, goalCards: goalCard)
+                        } label: {
+                            Text("View More")
+                        }
+
+//                        NavigationLink(destination: ProgressPage(), isActive: $presentProgressView) { }
+//
+//                        HStack(alignment: .center){
+//                            Button(""){
+//                                presentProgressView = true
+//                              //  showCardGoalView = false
+//                            }
+//
+//
+//                        } .accessibilityLabel("View More")
+//                            .accessibilityHint("Tap this card to navigate you to Add Your Balance ")
+//                        .foregroundColor(.white)
                         
                     }.padding(.leading).padding(.trailing)
                 }.frame(width: 328, height: 168).foregroundColor(.white)
-    }
+   // }
         }
         .fullScreenCover(isPresented: $presentProgressView){
-            ProgressPage()
+            ProgressPage( goalCard: goalCard, goalCards: goalCard)
+           
         }
 //        .onAppear{
 //          //  cardCustomVM.getCard()
@@ -76,7 +94,7 @@ struct CardCustomView: View {
     }
     
     func printstatment(){
-        print(" Successfully Fetch \(cardCustomVM.goalCards)")
+        print(" Successfully Fetch \(goalVM.goalCards)")
     }
 }
 
@@ -89,6 +107,19 @@ struct CardCustomView_Previews: PreviewProvider {
 //        CardCustomView(goalCard: GoalCards(entity: [], insertInto: cardCustomVM.goalCards)).environmentObject(cardCustomVM)
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 // VStack{
 // ForEach(cardCustomVM.goalCards, id: \.self) { goalCard in
 //     ZStack{

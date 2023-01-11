@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct ProgressPage: View {
-    @EnvironmentObject var progressVM:GoalCardViewModel
+    @EnvironmentObject var goalVM:GoalCardViewModel
+    let goalCard: GoalCards
 
     @State var progressValue: Float=0.0 //0.0 set as defalut
     @State var showingBottomSheet = false // false because we dont want to display the sheet until the user press the button
    // @Binding var otheramount = ""
     //we
+    let goalCards:GoalCards
+
     var body: some View {
         
-        NavigationView{
+       // NavigationView{
             ZStack{
                 
-                Color("backg")
+                Color("lightGray")
                     .ignoresSafeArea()
                 
                 VStack{
@@ -32,15 +35,15 @@ struct ProgressPage: View {
                             HStack{
                                 Image(systemName: "lightbulb")
                                     .font(.system(size: 24))
-                                    .foregroundColor(Color("lightBlue"))
-                                Text("You need to save 1500 per month in order to achieve this goal")
+                                    .foregroundColor(Color("lightGreen"))
+                                Text("You need to save 1500 per month in order to achieve this goal")//change the goal
                                     .font(.system(size: 18,weight: .regular))
                                     .foregroundColor(Color("darkBlue"))
                             }
                         ).padding(.top,-150)
                     
                     VStack{
-                        ProgressBar( progress: self.$progressValue)//$progressValue binding varible of the state progressValue
+                        ProgressBar( goalCard: goalCard, progress: self.$progressValue)//$progressValue binding varible of the state progressValue
                             .frame(width: 160.0, height: 160.0)
                             .padding(20.0).onAppear(){
                                 self.progressValue = 0.00 //intial value 30%
@@ -72,6 +75,7 @@ struct ProgressPage: View {
                                     .border(.gray)
                                     .cornerRadius(8)
                                     .fontWeight(.semibold)
+                                    .padding(.top,60)
                               
                             }
                         }
@@ -81,27 +85,30 @@ struct ProgressPage: View {
                 .sheet(isPresented: $showingBottomSheet){
                     // Text("test")
                     //  BottomSheetView()
-                    BottomSheetView(showingBottomSheet: $showingBottomSheet, progressValue: $progressValue)
+                    BottomSheetView(showingBottomSheet: $showingBottomSheet, progressValue: $progressValue, goalCards: goalCards)
                     //size
                         .presentationDetents([.height(200)]) // by default its display the sheet in medium size "half page" but the user can make the sheet bigger by pull the sheet up , we can do( .presentationDetents([.height(100)])) a hight for the sheet we want , ( .presentationDetents([.height(100), .medium ])) this is display the sheet at 100 and the user can pull up to the half of the screen , .presentationDetents([.medium,.height(600)])
                         .presentationDragIndicator(.visible) // this is for the line on the top of the sheet
                 }
+             
             }
-            .navigationBarTitle(Text("Vecation"))
-            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("Vacation").navigationBarTitleDisplayMode(.inline)
             .foregroundColor(Color("darkBlue"))
-      }
+           // .navigationBarTitle(Text("Vecation"))
+          //  .navigationBarTitleDisplayMode(.large)
+           
+     // }
         }
     }
     
 
-
-    struct ProgressPage_Previews: PreviewProvider {
-        static var previews: some View {
-            let progressVM = GoalCardViewModel()
-            ProgressPage()
-                .environmentObject(progressVM)
-        }
-    }
-    
+//
+//    struct ProgressPage_Previews: PreviewProvider {
+//        static var previews: some View {
+//            let progressVM = GoalCardViewModel()
+//           // ProgressPage(, goalCards: <#GoalCards#>)
+//                .environmentObject(progressVM)
+//        }
+//    }
+//    
 

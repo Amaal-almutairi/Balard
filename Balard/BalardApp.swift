@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct BalardApp: App {
-    @StateObject var goalCardVM = GoalCardViewModel()
+//    @StateObject var goalCardVM = GoalCardViewModel()
 
     var body: some Scene {
         WindowGroup {
          //  NavigationView {
                 ContentView()
                 // .environment(\.managedObjectContext, goalCardVM.container.viewContext)
-                    .environmentObject(goalCardVM)
+                   
         //  }
         }
     }
