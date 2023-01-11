@@ -16,6 +16,7 @@ struct CardCustomView: View {
     @Environment(\.presentationMode) var prezsentationMode
     @State var presentProgressView = false
     @State  var showCardGoalView = false
+    
 //    @State var totalAmount =
     var body: some View {
         VStack{
@@ -25,7 +26,7 @@ struct CardCustomView: View {
                         .modifier(Items.CardShapModifier())
                     VStack(alignment: .trailing){
                         HStack{
-                            Text(goalCard.name ?? "No goal")
+                            Text(goalCard.name ?? "Text19")
                                // .modifier(Items.TextStyleModifier())
                                 .font(.system(size:30 , weight: .medium))
                                 .accessibilityLabel("Your goal")
@@ -69,7 +70,8 @@ struct CardCustomView: View {
                         NavigationLink {
                             ProgressPage(goalCard: goalCard, goalCards: goalCard)
                         } label: {
-                            Text("View More")
+                            Text("Text13")
+                                .foregroundColor(Color("lightGray"))
                         }
 
                         

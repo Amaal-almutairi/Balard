@@ -5,4 +5,26 @@
   Created by Amaal Almutairi on 16/06/1444 AH.
   
 */
-"text1" = "explore";
+
+"Text1" = "Explore" ;
+"Text2" = "Add Goal" ;
+"Text3" = "Name" ;
+"Text4" = "Name Of Your Goal" ;
+"Text5" = "Goal" ;
+"Text6" = "Add The Goal $" ;
+"Text7" = "Months" ;
+"Text8" = "Add" ;
+"Text9" = "Add The Month";
+"Text10" = "100" ;
+"Text11" = "No Goals"  ;
+"Text12" = "Tap ‘Add Goal’ to start saving your money and achive your goals" ;
+"Text13" = "View More" ;
+"Text14" = "Add Money" ;
+"Text15" = "Add the amount you saved this month !" ;
+"Text16" = "You need to save " ;
+"Text17" = "per month in order to achieve this goal" ;
+"Text18" = "Your Goal";
+"Text19" = "No Goal";
+"Text20" = "Target Goal" ;
+"Text21" = "Create";
+"Text22" = "Add $";

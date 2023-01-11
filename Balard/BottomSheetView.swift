@@ -14,7 +14,7 @@ struct BottomSheetView: View {
     @Binding var progressValue: Float
     @Environment(\.presentationMode) var presentationMode
     let goalCards:GoalCards
-    @State var otheramount = "0"
+    @State var otheramount = ""
   
     
 //    @State var dataArray : [String] = [] //create array to save the amounts tha the user will enter
@@ -30,12 +30,12 @@ struct BottomSheetView: View {
                     Image(systemName: "dollarsign.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color("lightGreen"))
-                    Text("Add the amount you saved this month ! ")
+                    Text("Text15")
                         .multilineTextAlignment(.leading)
                 }
                 Section{
 //                    Text("\(Int(otheramount))")
-                    TextField("Add $", text: $otheramount)
+                    TextField("Text22" , text: $otheramount)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 351,height: 51)
                         .padding(.bottom,20)
@@ -61,7 +61,7 @@ struct BottomSheetView: View {
                // presentationMode.wrappedValue.dismiss()
             }label: {
                 //  NavigationLink(destination: ProgressPage())  {
-                Text("Add")
+                Text("Text8")
                     .frame(width:281 , height:41 )
                     .foregroundColor(.white)
                     .background(Color("lightBlue"))

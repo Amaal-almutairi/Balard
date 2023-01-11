@@ -36,7 +36,8 @@ struct ProgressPage: View {
                                 Image(systemName: "lightbulb")
                                     .font(.system(size: 24))
                                     .foregroundColor(Color("lightGreen"))
-                                Text("You need to save 1500 per month in order to achieve this goal")//change the goal
+//                                Text("You need to save 1500 per month in order to achieve this goal")//change the goal\
+                                Text("Text15")
                                     .font(.system(size: 18,weight: .regular))
                                     .foregroundColor(Color("darkBlue"))
                             }
@@ -67,7 +68,7 @@ struct ProgressPage: View {
                             
                             ZStack{
                                 
-                                Text("Add Money")
+                                Text("Text14")
                                 //  .buttonStyle(.borderedProminent)
                                     .frame(width:281 , height:41 )
                                     .foregroundColor(.white)

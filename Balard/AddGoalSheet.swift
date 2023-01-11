@@ -13,41 +13,41 @@ struct AddGoalSheet: View {
     @State var months = ""
     @StateObject var numberOnly:NumbersOnly = NumbersOnly()
     @EnvironmentObject var goalVM:GoalCardViewModel
-    @State private var showAddGoalSheet = false
-    
+//    @State private var showAddGoalSheet = false
+    @Environment(\.presentationMode) var prezsentationMode
   
-    @Environment(\.presentationMode) var dismiss
-    @State var presentCardGoalView = false
+//    @State var presentCardGoalView = false
     
     var body: some View {
         Form{
             VStack(alignment: .leading){
                 VStack(alignment: .leading){
-                    Text("Name")
-                    TextField("Name Of Your Goal", text: $name)
+                    Text("Text3")
+                    TextField("Text4", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     //  .modifier(Items.TextFieldModifier())
                 } .padding()
                 VStack(alignment: .leading){
-                    Text("Goal")
-                    TextField("Add The Goal $", text: $numberOnly.goalBalancevalue)
+                    Text("Text5")
+                    TextField("Text6", text: $numberOnly.goalBalancevalue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     //.modifier(Items.TextFieldModifier())
                 }.padding().keyboardType(.decimalPad)
                 VStack(alignment: .leading){
-                    Text("Months")
-                    TextField("Add The Month", text: $numberOnly.monthsvalue)
+                    Text("Text7")
+                    TextField("Text14", text: $numberOnly.monthsvalue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     //.modifier(Items.TextFieldModifier())
                 }.padding().keyboardType(.numberPad)
-                Button("Create") {
+                Button("Text21") {
                     goalVM.addCardGoal(goalName: name, goalBalance:  numberOnly.goalBalancevalue, months:numberOnly.monthsvalue)
                     goalVM.getCard()
                     name = ""
                     numberOnly.goalBalancevalue = ""
                     numberOnly.monthsvalue = ""
-                    presentCardGoalView = true
-                    showAddGoalSheet.toggle()
+                    prezsentationMode.wrappedValue.dismiss()
+//                    presentCardGoalView = true
+//                    showAddGoalSheet.toggle()
 
                     
                     print("add new goal")

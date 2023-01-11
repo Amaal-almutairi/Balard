@@ -34,7 +34,8 @@ struct ContentView: View {
                               .foregroundColor(Color("darkBlue"))
                               .padding()
                               .padding(.top,-90)
-                          Text("No Goals \nTap ‘Add Goal’ to start saving your money and achive your goals").lineLimit(nil)
+                          Text("Text11")
+                          Text("Text12").lineLimit(nil)
                               .multilineTextAlignment(.center)
                               .accessibilityLabel("No Goals \nTap  ‘Add Goal’ to start saving your money  and achive your goals")
                           //.accessibilityValue(goalCard.name ?? "your goal")
@@ -52,7 +53,7 @@ struct ContentView: View {
                   }
                   
                   
-              } .navigationBarTitle(Text("Explore"))
+              } .navigationBarTitle(Text("Text1"))
                   .navigationBarItems(trailing:
                                         HStack {
                       Image(systemName: "plus")
@@ -60,7 +61,7 @@ struct ContentView: View {
                           .accessibilityHint("Add Your Goal")
                           .foregroundColor(Color("lightGreen"))
                           .padding(.leading)
-                      Button("Add Goal") {
+                      Button("Text2") {
                           showAddGoalSheet.toggle()
                       }   .accessibilityLabel("Add Goal")
                       
