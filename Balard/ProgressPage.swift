@@ -19,7 +19,7 @@ struct ProgressPage: View {
         NavigationView{
             ZStack{
                 
-                Color("backg")
+                Color("lightGray")
                     .ignoresSafeArea()
                 
                 VStack{
@@ -32,7 +32,7 @@ struct ProgressPage: View {
                             HStack{
                                 Image(systemName: "lightbulb")
                                     .font(.system(size: 24))
-                                    .foregroundColor(Color("lightBlue"))
+                                    .foregroundColor(Color("lightGreen"))
                                 Text("You need to save 1500 per month in order to achieve this goal")
                                     .font(.system(size: 18,weight: .regular))
                                     .foregroundColor(Color("darkBlue"))
@@ -72,6 +72,8 @@ struct ProgressPage: View {
                                     .border(.gray)
                                     .cornerRadius(8)
                                     .fontWeight(.semibold)
+                                    .padding(.top,60)
+                                    
                               
                             }
                         }

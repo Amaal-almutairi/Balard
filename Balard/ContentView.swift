@@ -20,42 +20,52 @@ struct ContentView: View {
     
     var body: some View {
       NavigationView {
-            VStack{
-                VStack{
-                    
-                    if goalVM.goalCards.isEmpty {
-                        Text("No Goals Tap  ‘Add Goal’  to start saving your money  and achive your goals").lineLimit(nil)
-                        
-                    }else{
-                        Form {
-                            ForEach(goalVM.goalCards, id: \.id) {cardGoal in
-                                CardCustomView(goalCard: cardGoal)
-                            } .onDelete(perform:goalVM.deleteCard)
-                            
-                            // .environmentObject(goalVM)
-                            
-                        }
-                    }
-                    
-                }  .navigationBarTitle(Text("Explore"))
-                    .navigationBarItems(trailing:
+          ZStack{
+              Color("lightGray")
+                  .ignoresSafeArea()
+              VStack{
+                  VStack{
+                      
+                      if goalVM.goalCards.isEmpty {
+                          
+                          Image(systemName: "exclamationmark.circle")
+                              .font(.system(size: 60))
+                              .foregroundColor(Color("darkBlue"))
+                              .padding()
+                              .padding(.top,-90)
+                          Text("No Goals \nTap ‘Add Goal’ to start saving your money and achive your goals").multilineTextAlignment(.center).lineLimit(nil)
+                          
+                      }else{
+                          Form {
+                              ForEach(goalVM.goalCards, id: \.id) {cardGoal in
+                                  CardCustomView(goalCard: cardGoal)
+                              } .onDelete(perform:goalVM.deleteCard)
+                              
+                              // .environmentObject(goalVM)
+                              
+                          }
+                      }
+                      
+                  }  .navigationBarTitle(Text("Explore"))
+                      .navigationBarItems(trailing:
                                             HStack {
-                        Image(systemName: "plus")
-                            .foregroundColor(Color("lightGreen"))
-                            .padding(.leading)
-                        Button("Add Goal") {
-                            showAddGoalSheet.toggle()
-                        }.foregroundColor(.black).padding(.trailing)
-                            .sheet(isPresented: $showAddGoalSheet){
-                                AddGoalSheet()
-                            }
-                    } .modifier(Items.AddGoalBtnModifier())
-                    )
-                
-            }
-            .onAppear(){
-                goalVM.getCard()
-            }
+                          Image(systemName: "plus")
+                              .foregroundColor(Color("lightGreen"))
+                              .padding(.leading)
+                          Button("Add Goal") {
+                              showAddGoalSheet.toggle()
+                          }.foregroundColor(.black).padding(.trailing)
+                              .sheet(isPresented: $showAddGoalSheet){
+                                  AddGoalSheet()
+                              }
+                      } .modifier(Items.AddGoalBtnModifier())
+                      )
+                  
+              }
+              .onAppear(){
+                  goalVM.getCard()
+              }
+          }
        }
     }
 }

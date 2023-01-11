@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProgressBar: View {
     @EnvironmentObject var progressVM:GoalCardViewModel
+   // @State var GoalB : CardCustomView
+   // let goalCard2: GoalCards
 //    let goalCard: GoalCards
 
        @Binding var progress: Float //inserting the value that we want to update
@@ -25,7 +27,7 @@ struct ProgressBar: View {
                            .font(.system(size: 36,weight: .regular))
                   // Text(goalCard.goalBalance ?? "")
                     Text("500000")
-                           .foregroundColor(Color("lightGray"))
+                           .foregroundColor(Color("ourgrey"))
                            .font(.system(size: 24,weight: .regular))
                    //}
                }
