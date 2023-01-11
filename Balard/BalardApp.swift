@@ -12,9 +12,11 @@ struct BalardApp: App {
 //    @StateObject var goalCardVM = GoalCardViewModel()
 
     var body: some Scene {
+        
         WindowGroup {
+            splashScreen()
          //  NavigationView {
-                ContentView()
+           
                 // .environment(\.managedObjectContext, goalCardVM.container.viewContext)
                    
         //  }

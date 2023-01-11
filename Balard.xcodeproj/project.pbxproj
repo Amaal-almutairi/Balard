@@ -22,6 +22,7 @@
 		E0ECAAAE296D60E200537DA5 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAAD296D60E200537DA5 /* BottomSheetView.swift */; };
 		E0ECAAB0296D617A00537DA5 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAAF296D617A00537DA5 /* ProgressBar.swift */; };
 		E0ECAAB2296D76F300537DA5 /* AddGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */; };
+		E0ECAAB5296EA1F600537DA5 /* splashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECAAB4296EA1F600537DA5 /* splashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E0ECAAAD296D60E200537DA5 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		E0ECAAAF296D617A00537DA5 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalSheet.swift; sourceTree = "<group>"; };
+		E0ECAAB4296EA1F600537DA5 /* splashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */,
 				E0ECAAAB296D5D5B00537DA5 /* ProgressPage.swift */,
 				E0ECAAAF296D617A00537DA5 /* ProgressBar.swift */,
+				E0ECAAB4296EA1F600537DA5 /* splashScreen.swift */,
 				E0ECAAAD296D60E200537DA5 /* BottomSheetView.swift */,
 			);
 			name = View;
@@ -201,6 +204,7 @@
 				E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */,
 				E0C6E00B2968857D00B27F46 /* GoalCardViewModel.swift in Sources */,
 				E0ECAAB2296D76F300537DA5 /* AddGoalSheet.swift in Sources */,
+				E0ECAAB5296EA1F600537DA5 /* splashScreen.swift in Sources */,
 				E0C6E004296884BE00B27F46 /* ContentView.swift in Sources */,
 				E01585A9296BECD4004AFF83 /* test.swift in Sources */,
 				E0C6E001296884BE00B27F46 /* Items.swift in Sources */,
