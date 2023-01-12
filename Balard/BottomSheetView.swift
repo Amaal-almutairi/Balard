@@ -10,7 +10,7 @@ import SwiftUI
 struct BottomSheetView: View {
     @EnvironmentObject var goalVM:GoalCardViewModel
 
-    @Binding var showingBottomSheet:Bool
+//    @Binding var showingBottomSheet:Bool
     @Binding var progressValue: Float
     @Environment(\.presentationMode) var presentationMode
     let goalCards:GoalCards
@@ -28,35 +28,26 @@ struct BottomSheetView: View {
         
         Spacer()
         VStack{
-            
-            
             VStack{
                 HStack{
                     Image(systemName: "dollarsign.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color("lightGreen"))
-//                    Text("\(totalAmount)")
                     Text("Text15")
                         .multilineTextAlignment(.leading)
                 }
                 Section{
-//                    Text("\(Int(otheramount))")
                     TextField("Text22" , text: $otheramount)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 351,height: 51)
                         .padding(.bottom,20)
-                    //  .padding(.top,-50)
-                    
-                    
-                    
                 }
                 
             }
             Button{
-                showingBottomSheet.toggle()
+                presentationMode.wrappedValue.dismiss()
                 let otheramountInt: Int = Int(otheramount) ?? 0
-                goalVM.AddAmount(balance: otheramountInt, goalCard: goalCards) // call the function to add and save the amount
-               // BottomSheetVM.getCard()
+                goalVM.AddAmount(balance: otheramountInt, goalCard: goalCards, progress: progressValue) // call the function to add and save the amount
                 otheramount = ""
                 
                 if (progressValue) < 1.0{
@@ -64,9 +55,7 @@ struct BottomSheetView: View {
                 }else {
                     progressValue -= 1.0 //when it reach tghe value will not increment
                 }
-               // presentationMode.wrappedValue.dismiss()
             }label: {
-                //  NavigationLink(destination: ProgressPage())  {
                 Text("Text8")
                     .frame(width:281 , height:41 )
                     .foregroundColor(.white)
@@ -74,22 +63,10 @@ struct BottomSheetView: View {
                     .border(.gray)
                     .cornerRadius(8)
                     .fontWeight(.semibold)
-                
-                //  }
-                //  }
             }
-            
-            //loop print the content of the array
-//            ForEach(dataArray,id: \.self) { data in
-//                Text(data)
-//            }
             
         }
     }
-        
-//        func saveAmount() {
-////            dataArray.append(BottomSheetVM.otheramount)
-//        }
         
     }
 //struct BottomSheetView_Previews: PreviewProvider {

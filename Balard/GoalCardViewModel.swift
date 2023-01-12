@@ -61,9 +61,10 @@ class GoalCardViewModel:ObservableObject{
         }
     }
 //     this function allow user to add balance to achive the goal balance
-    func AddAmount(balance:Int ,goalCard:GoalCards ) {
+    func AddAmount(balance:Int ,goalCard:GoalCards,progress:Float ) {
         
         goalCard.balance += Int64(balance)
+        goalCard.progress = Float(progress)
         saveCardGoal(newCardGoal: goalCard)
         getCard()
     }
