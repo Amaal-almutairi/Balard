@@ -33,16 +33,16 @@ struct CardCustomView: View {
                         Spacer()
                         Text("\(goalCard.goalBalance)")
                             .font(.system(size:21 , weight: .regular))
-                            .accessibilityLabel("goalBalance")
-                            .accessibilityValue(String(goalCard.name ?? "goalBalance"))
+                            .accessibilityLabel("Target Goal")
+                            .accessibilityValue(String(goalCard.goalBalance ))
                         
                     }
                     VStack{
                         Text("\(goalCard.balance)")
                             .font(.system(size:16 , weight: .regular))
                             .foregroundColor(Color("ourgrey"))
-                            .accessibilityLabel("goalBalance")
-                            .accessibilityValue(String(goalCard.name ?? "No balance"))
+                            .accessibilityLabel("You saved")
+                            .accessibilityValue(String(goalCard.balance ))
                         
                     }
                     HStack(alignment: .center){

@@ -36,10 +36,13 @@ struct ProgressPage: View {
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("lightGreen"))
                             //                                Text("You need to save 1500 per month in order to achieve this goal")//change the goal\
-                            Text("You need to save per month \(totalAmount) in order to achieve this goal ")
-                            // Text("Text15")
+                           // Text("You need to save per month \(totalAmount) in order to achieve this goal ")
+                            //Text("Text16");Text("(totalAmount)");Text("Text17")
+                            Text("Text16" + "\(totalAmount)" + "Text17" )
+                          
                                 .font(.system(size: 18,weight: .regular))
                                 .foregroundColor(Color("darkBlue"))
+                            
                         }
                     ).padding(.top,-150)
                 
