@@ -1,5 +1,5 @@
 # Balard
-### Big idea :
+#### Big idea :
 #### Finance
 ### Challenge statement :
 #### Build tool to help people to manage their finances
