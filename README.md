@@ -6,7 +6,7 @@
 #### Build tool to help people to manage their finances
 
 ## SOLUTION CONCEPT:
-### An application for people who want to save there money by manage their progress.
+#### An application for people who want to save there money by manage their progress.
 
 ## App statement :
 #### An App that helps / provides a way for people who want(s) to save their money by allow the users to set their goal.
