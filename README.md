@@ -15,7 +15,3 @@
 4. Github 
 5. Sketch 
 6. Xcode 
-
-
-8. one 
-9. two
