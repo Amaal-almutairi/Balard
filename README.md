@@ -19,6 +19,7 @@
 4. Github 
 5. Sketch 
 6. Xcode 
-7. 
+# Challenge Summary:
+https://contattafiles.s3.us-west-1.amazonaws.com/tnt41680/jCyegETd7Y4IN7W/Boosters_MSLE_ADATWQ_2022_2023.pdf
 # Demo Link:
 https://contattafiles.s3.us-west-1.amazonaws.com/tnt41680/CArWYfYIObnIdyu/screen%20recording%20balard.mp4
