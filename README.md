@@ -1,13 +1,13 @@
 # Balard
 ## Big idea :
 #### Finance
-### Challenge statement :
+## Challenge statement :
 #### Build tool to help people to manage their finances
-### SOLUTION CONCEPT:
+## SOLUTION CONCEPT:
 #### An application for people who want to save there money by manage their progress.
-### App statement :
+## App statement :
 #### An App that helps / provides a way for people who want(s) to save their money by allow the users to set their goal
-### Technologies & tools :
+## Technologies & tools :
 
 1. Core data 
 2. Localization 
