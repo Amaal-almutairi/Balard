@@ -28,6 +28,6 @@
 
 
 ## Challenge Summary:
-https://drive.google.com/file/d/1ndReh9KRSuBzzaGzxNWhPaj3pUkmexi-/view?usp=sharing
+https://contattafiles.s3.us-west-1.amazonaws.com/tnt41680/jCyegETd7Y4IN7W/Boosters_MSLE_ADATWQ_2022_2023.pdf
 ## Demo Link:
 https://contattafiles.s3.us-west-1.amazonaws.com/tnt41680/CArWYfYIObnIdyu/screen%20recording%20balard.mp4
