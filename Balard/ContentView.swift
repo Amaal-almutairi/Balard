@@ -13,11 +13,12 @@ struct ContentView: View {
     @Environment(\.presentationMode) var dismiss
     @State var presentCardGoalView = false
     @StateObject var goalVM = GoalCardViewModel()
-    
+   // @State  var goal:GoalCards
+
     var body: some View {
         NavigationView {
             ZStack{
-                Color("lightGray")
+                Color("Backg")
                     .ignoresSafeArea()
                 
                 VStack{
@@ -76,13 +77,13 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        let goalVM:GoalCardViewModel = GoalCardViewModel()
-        ContentView().environmentObject(goalVM)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        let goalVM:GoalCardViewModel = GoalCardViewModel()
+//        ContentView(goal: ).environmentObject(goalVM)
+//    }
+//}
 
 
 

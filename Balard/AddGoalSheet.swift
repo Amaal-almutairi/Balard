@@ -35,8 +35,8 @@ struct AddGoalSheet: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }.padding()
                 Button("Text21") {
-                    let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 0
-                    let monthInt: Int = Int(numberOnly.monthsvalue) ?? 0
+                    let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 1
+                    let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
                     
                     goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
                     goalVM.getCard()

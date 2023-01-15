@@ -11,13 +11,14 @@ struct splashScreen: View {
     @State var isActive : Bool = false
     @State private var size = 0.8
     @State private var opacity = 0.5
-    
+   // @State  var goal:GoalCards
+
     var body: some View {
         if isActive {
-           ContentView()
+            ContentView()
         } else {
             ZStack{
-                Color("lightGray")
+                Color("Backg")
                     .ignoresSafeArea()
                 VStack {
                     VStack {
@@ -54,8 +55,8 @@ struct splashScreen: View {
 }
 
 
-struct splashScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        splashScreen()
-    }
-}
+//struct splashScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        splashScreen( goal: goal)
+//    }
+//}

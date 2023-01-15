@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E01585A9296BECD4004AFF83 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01585A8296BECD4004AFF83 /* test.swift */; };
+		E06CA5B02973F7A5008D28F5 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06CA5AF2973F7A5008D28F5 /* test2.swift */; };
 		E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFE82968839100B27F46 /* BalardApp.swift */; };
 		E0C6DFED2968839200B27F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEC2968839200B27F46 /* Assets.xcassets */; };
 		E0C6DFF02968839200B27F46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEF2968839200B27F46 /* Preview Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		E01585A8296BECD4004AFF83 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		E06CA5AF2973F7A5008D28F5 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		E0C6DFE52968839100B27F46 /* Balard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6DFE82968839100B27F46 /* BalardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalardApp.swift; sourceTree = "<group>"; };
 		E0C6DFEC2968839200B27F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C6DFFF296884BE00B27F46 /* CardCustomView.swift */,
+				E06CA5AF2973F7A5008D28F5 /* test2.swift */,
 				E01585A8296BECD4004AFF83 /* test.swift */,
 				E0C6DFFD296884BE00B27F46 /* ContentView.swift */,
 				E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */,
@@ -216,6 +219,7 @@
 				E0ECAAAE296D60E200537DA5 /* BottomSheetView.swift in Sources */,
 				E0C6E038296B32C300B27F46 /* NumberOnly.swift in Sources */,
 				E0ECAAB0296D617A00537DA5 /* ProgressBar.swift in Sources */,
+				E06CA5B02973F7A5008D28F5 /* test2.swift in Sources */,
 				E0C6E002296884BE00B27F46 /* CardCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

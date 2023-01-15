@@ -11,12 +11,14 @@ import CoreData
 struct CardCustomView: View {
     
     let goalCard: GoalCards
-    @State private var progress:Float = 0.75
+    @State private var progress:Float = 0.00
     @EnvironmentObject var goalVM: GoalCardViewModel
     @Environment(\.presentationMode) var prezsentationMode
     @State var presentProgressView = false
     @State  var showCardGoalView = false
-    
+    var convertProgressToPersantage:Float {
+        goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+    }
     var body: some View {
         VStack{
             ZStack{
@@ -47,20 +49,47 @@ struct CardCustomView: View {
                     }
                     HStack(alignment: .center){
                         
-                        ProgressView(value: progress) {
+                        ProgressView(value: convertProgressToPersantage) {
                         }   .modifier(Items.TextStyleModifier())
-                        Text("\(String(format: "%.0f%%", progress * 100))")
-                            .accessibilityValue("\(String(format: "%.0f%%", progress * 100))")
-                            .foregroundColor(.white)
+                        Text("\(String(format: "%.0f%%", convertProgressToPersantage*100))")
                         
-                            .onAppear(){
-                                progress = 0.00 //intial value 30%
-                                if (progress) < 1.0{
-                                    progress += 0.10 // increment 10% each time press the button
-                                }else {
-                                    progress -= 1.0 //when it reach tghe value will not increment
-                                }
+                           // .accessibilityValue("\(String(format: "%.0f%%", progress * 100))")
+                            .foregroundColor(.white).onAppear(){
+                                
+                                print(convertProgressToPersantage)
                             }
+//                            .onAppear(){
+//                                goalCard.progress = 0.00
+//                            }
+//                            .onAppear(){
+//                                goalCard.progress = 0.00
+//                                if goalCard.balance > goalCard.goalBalance {
+//                                    goalCard.balance = goalCard.goalBalance
+//                                    goalCard.progress = convertProgressToPersantage
+//                                //    Float(Double(goalCard.balance )) // increment 10% each time press the button
+//                                }else{
+//                                    convertProgressToPersantage // increment 10% each time press the button
+//                                    goalCard.progress -= 1.0
+//
+//                                   // if (progress) < 1.0{
+//
+//                                 //   }else {
+//                                       // goalCard.progress += Float(Int(Double(goalCard.balance )))
+//                                   // }
+//
+//                                }
+//                            }
+//                            .onAppear(){
+//                                goalCard.progress = 0.00 //intial value 30%
+//                                if (goalCard.progress) > goalCard.goalBalance {
+//                                    goalCard.balance = goalCard.goalBalance
+//                                    self.progress = convertProgressToPersantage
+//                                }else {
+//                                    goalCard.progress += Float(goalCard.balance / 100) // increment 10% each time press the button
+//
+//                                    goalCard.progress -= 1.0 //when it reach tghe value will not increment
+//                                }
+//                            }
                     }
                     Divider().foregroundColor(.gray).fontWeight(Font.Weight.medium)
                     

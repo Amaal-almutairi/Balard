@@ -38,6 +38,7 @@ class GoalCardViewModel:ObservableObject{
         }catch let error {
             print("error fetching Data \(error)")
         }
+        print(goalCards)
     }
     // this function allow user to add goalName,goalBalance,months to achive the goal balance
 
