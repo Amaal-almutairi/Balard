@@ -96,7 +96,7 @@ struct CardCustomView: View {
                     NavigationLink {
                         ProgressPage(goalCard: goalCard)
                     } label: {
-                        Text("Text13")
+                        Text("Text14")
                             .foregroundColor(Color("ourgrey"))
                     }
                     
@@ -112,9 +112,6 @@ struct CardCustomView: View {
     
 }
 
-
-
-//
 //struct CardCustomView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        let cardCustomVM = GoalCardViewModel()
