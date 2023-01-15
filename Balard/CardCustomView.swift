@@ -96,7 +96,7 @@ struct CardCustomView: View {
                     NavigationLink {
                         ProgressPage(goalCard: goalCard)
                     } label: {
-                        Text("Text14")
+                        Text("Text13")
                             .foregroundColor(Color("ourgrey"))
                     }
                     
