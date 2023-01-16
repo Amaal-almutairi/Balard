@@ -18,6 +18,9 @@ struct ProgressPage: View {
         let totalAmountGoal =  goalCard.goalBalance / goalCard.months
         return totalAmountGoal
     }
+    var convertProgressToPersantage:Float {
+        goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+    }
     var body: some View {
         ZStack{
             
@@ -51,7 +54,14 @@ struct ProgressPage: View {
                 VStack{
                     ProgressBar( goalCard: goalCard)//$progressValue binding varible of the state progressValue
                         .frame(width: 160.0, height: 160.0)
-                        .padding(20.0)
+                        .padding(20.0)   .onAppear(){
+                            if goalCard.balance > goalCard.goalBalance {
+                                goalCard.balance = goalCard.goalBalance
+                                goalCard.progress = convertProgressToPersantage
+                                //    Float(Double(goalCard.balance )) // increment 10% each time press the button
+                            }
+                        }
+                    
 //                        .onAppear(){
 //                            self.progressValue = 0.00 //intial value 30%
 //
@@ -89,7 +99,7 @@ struct ProgressPage: View {
             }
             .padding()
             .sheet(isPresented: $showingBottomSheet){
-                BottomSheetView(progressValue: $progressValue, goalCards: goalCard)
+                BottomSheetView(goalCard: goalCard, progressValue: progressValue, goalCards: goalCard)
                 
                 //size
                     .presentationDetents([.height(200)]) // by default its display the sheet in medium size "half page" but the user can make the sheet bigger by pull the sheet up , we can do( .presentationDetents([.height(100)])) a hight for the sheet we want , ( .presentationDetents([.height(100), .medium ])) this is display the sheet at 100 and the user can pull up to the half of the screen , .presentationDetents([.medium,.height(600)])

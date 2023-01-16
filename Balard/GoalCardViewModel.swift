@@ -10,7 +10,7 @@ import CoreData
 
 class GoalCardViewModel:ObservableObject{
     
-    
+//    let goalCard:GoalCards
     let container: NSPersistentContainer
     @Published var goalCards:[GoalCards] = []
     
@@ -23,13 +23,14 @@ class GoalCardViewModel:ObservableObject{
                 print("Successfully loaded")
             }
         }
+//        var convertProgressToPersantage:Float {
+//            goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+//        }
        getCard()
     }
 
-//    var convertProgressToPersantage:Float {
-//        goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
-//    }
-//    
+   
+   
     func getCard(){
         
         

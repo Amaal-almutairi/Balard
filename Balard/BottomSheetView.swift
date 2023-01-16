@@ -9,14 +9,16 @@ import SwiftUI
 
 struct BottomSheetView: View {
     @EnvironmentObject var goalVM:GoalCardViewModel
-
+    var goalCard:GoalCards
 //    @Binding var showingBottomSheet:Bool
-    @Binding var progressValue: Float
+    @State var progressValue: Float
     @Environment(\.presentationMode) var presentationMode
     let goalCards:GoalCards
     
     @State var otheramount = ""
-    
+    var convertProgressToPersantage:Float {
+       goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+   }
   
     
 //    init(totalAmount:Int64, monthValue:Int64, totalAmountGoal:Int64){
@@ -50,10 +52,10 @@ struct BottomSheetView: View {
                 goalVM.AddAmount(balance: otheramountInt, goalCard: goalCards, progress: progressValue) // call the function to add and save the amount
                 otheramount = ""
                 
-                if (progressValue) < 1.0{
-                    self.progressValue += 0.10 // increment 10% each time press the button
-                }else {
-                    progressValue -= 1.0 //when it reach tghe value will not increment
+                if goalCards.balance > goalCards.goalBalance {
+                    goalCards.balance = goalCards.goalBalance
+                    goalCards.progress = convertProgressToPersantage
+                //    Float(Double(goalCard.balance )) // increment 10% each time press the button
                 }
             }label: {
                 Text("Text8")

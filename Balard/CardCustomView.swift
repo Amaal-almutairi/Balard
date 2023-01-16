@@ -62,22 +62,7 @@ struct CardCustomView: View {
 //                                goalCard.progress = 0.00
 //                            }
 //                            .onAppear(){
-//                                goalCard.progress = 0.00
-//                                if goalCard.balance > goalCard.goalBalance {
-//                                    goalCard.balance = goalCard.goalBalance
-//                                    goalCard.progress = convertProgressToPersantage
-//                                //    Float(Double(goalCard.balance )) // increment 10% each time press the button
-//                                }else{
-//                                    convertProgressToPersantage // increment 10% each time press the button
-//                                    goalCard.progress -= 1.0
-//
-//                                   // if (progress) < 1.0{
-//
-//                                 //   }else {
-//                                       // goalCard.progress += Float(Int(Double(goalCard.balance )))
-//                                   // }
-//
-//                                }
+//                            
 //                            }
 //                            .onAppear(){
 //                                goalCard.progress = 0.00 //intial value 30%
