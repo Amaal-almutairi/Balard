@@ -49,12 +49,13 @@ struct ProgressPage: View {
                     ).padding(.top,-150)
                 
                 VStack{
-                    ProgressBar( goalCard: goalCard, progress: self.$progressValue)//$progressValue binding varible of the state progressValue
+                    ProgressBar( goalCard: goalCard)//$progressValue binding varible of the state progressValue
                         .frame(width: 160.0, height: 160.0)
-                        .padding(20.0).onAppear(){
-                            self.progressValue = 0.00 //intial value 30%
-                            
-                        }
+                        .padding(20.0)
+//                        .onAppear(){
+//                            self.progressValue = 0.00 //intial value 30%
+//
+//                        }
                     /*Button("increment"){
                      if (progressValue) < 1.0{
                      self.progressValue += 0.10 // increment 10% each time press the button

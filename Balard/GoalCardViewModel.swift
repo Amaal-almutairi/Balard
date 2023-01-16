@@ -26,6 +26,10 @@ class GoalCardViewModel:ObservableObject{
        getCard()
     }
 
+//    var convertProgressToPersantage:Float {
+//        goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+//    }
+//    
     func getCard(){
         
         

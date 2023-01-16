@@ -11,9 +11,12 @@ struct ProgressBar: View {
     @EnvironmentObject var goalVM:GoalCardViewModel
     let goalCard: GoalCards
     
-    @Binding var progress: Float //inserting the value that we want to update
+//    @Binding var progress: Float //inserting the value that we want to update
     var color: Color = Color("lightBlue")
     //var color: Color = Color.green
+    var convertProgressToPersantage:Float {
+       goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+   }
     var body: some View{
         ZStack{
             //first circle which display the remining of the progress
@@ -35,7 +38,7 @@ struct ProgressBar: View {
             //second circle which display the  the progress
             
             Circle()
-                .trim(from: 0.0 , to: CGFloat(min(self.progress,1.0))) //1.0 refers to 100
+                .trim(from: 0.0 , to: CGFloat(min(convertProgressToPersantage,1.0))) //1.0 refers to 100
                 .stroke(style: StrokeStyle(lineWidth: 12.0 , lineCap: .round , lineJoin: .round))
                 .foregroundColor(color)//the color we supsfied as varible
                 .rotationEffect(Angle(degrees: 270)) //the prgress start at the top

@@ -49,14 +49,14 @@ struct CardCustomView: View {
                     }
                     HStack(alignment: .center){
                         
-                        ProgressView(value: convertProgressToPersantage) {
+                        ProgressView(value:convertProgressToPersantage) {
                         }   .modifier(Items.TextStyleModifier())
                         Text("\(String(format: "%.0f%%", convertProgressToPersantage*100))")
                         
                            // .accessibilityValue("\(String(format: "%.0f%%", progress * 100))")
                             .foregroundColor(.white).onAppear(){
                                 
-                                print(convertProgressToPersantage)
+                               print(convertProgressToPersantage)
                             }
 //                            .onAppear(){
 //                                goalCard.progress = 0.00
