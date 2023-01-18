@@ -86,7 +86,7 @@ struct ProgressPage: View {
                         
                         ZStack{
                             
-                            Text("Text14")
+                            Text("Text28")
                                 .frame(width:281 , height:41 )
                                 .foregroundColor(.white)
                                 .background(Color("lightBlue"))
