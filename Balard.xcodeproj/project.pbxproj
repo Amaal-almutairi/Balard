@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E01585A9296BECD4004AFF83 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01585A8296BECD4004AFF83 /* test.swift */; };
 		E06CA5B02973F7A5008D28F5 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06CA5AF2973F7A5008D28F5 /* test2.swift */; };
+		E06CA5B429768614008D28F5 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06CA5B329768614008D28F5 /* EditCard.swift */; };
+		E06CA5B62976C9E8008D28F5 /* editAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06CA5B52976C9E8008D28F5 /* editAmount.swift */; };
 		E0C6DFE92968839100B27F46 /* BalardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6DFE82968839100B27F46 /* BalardApp.swift */; };
 		E0C6DFED2968839200B27F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEC2968839200B27F46 /* Assets.xcassets */; };
 		E0C6DFF02968839200B27F46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6DFEF2968839200B27F46 /* Preview Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		E01585A8296BECD4004AFF83 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		E06CA5AF2973F7A5008D28F5 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
+		E06CA5B329768614008D28F5 /* EditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
+		E06CA5B52976C9E8008D28F5 /* editAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editAmount.swift; sourceTree = "<group>"; };
 		E0C6DFE52968839100B27F46 /* Balard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C6DFE82968839100B27F46 /* BalardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalardApp.swift; sourceTree = "<group>"; };
 		E0C6DFEC2968839200B27F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,11 +110,13 @@
 				E06CA5AF2973F7A5008D28F5 /* test2.swift */,
 				E01585A8296BECD4004AFF83 /* test.swift */,
 				E0C6DFFD296884BE00B27F46 /* ContentView.swift */,
+				E06CA5B329768614008D28F5 /* EditCard.swift */,
 				E0ECAAB1296D76F300537DA5 /* AddGoalSheet.swift */,
 				E0ECAAAB296D5D5B00537DA5 /* ProgressPage.swift */,
 				E0ECAAAF296D617A00537DA5 /* ProgressBar.swift */,
 				E0ECAAB4296EA1F600537DA5 /* splashScreen.swift */,
 				E0ECAAAD296D60E200537DA5 /* BottomSheetView.swift */,
+				E06CA5B52976C9E8008D28F5 /* editAmount.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -215,6 +221,8 @@
 				E0C6E004296884BE00B27F46 /* ContentView.swift in Sources */,
 				E01585A9296BECD4004AFF83 /* test.swift in Sources */,
 				E0C6E001296884BE00B27F46 /* Items.swift in Sources */,
+				E06CA5B62976C9E8008D28F5 /* editAmount.swift in Sources */,
+				E06CA5B429768614008D28F5 /* EditCard.swift in Sources */,
 				E0C6DFF8296883BD00B27F46 /* DataBase.xcdatamodeld in Sources */,
 				E0ECAAAE296D60E200537DA5 /* BottomSheetView.swift in Sources */,
 				E0C6E038296B32C300B27F46 /* NumberOnly.swift in Sources */,

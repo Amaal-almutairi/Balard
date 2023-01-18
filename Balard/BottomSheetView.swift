@@ -9,15 +9,17 @@ import SwiftUI
 
 struct BottomSheetView: View {
     @EnvironmentObject var goalVM:GoalCardViewModel
-    var goalCard:GoalCards
+//    var goalCard:GoalCards
 //    @Binding var showingBottomSheet:Bool
     @State var progressValue: Float
     @Environment(\.presentationMode) var presentationMode
     let goalCards:GoalCards
     
     @State var otheramount = ""
+    @StateObject var numberOnly:NumbersOnly = NumbersOnly()
+    
     var convertProgressToPersantage:Float {
-       goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+       goalCards.balance == 0 ? 0: Float(goalCards.balance) / Float(goalCards.goalBalance)
    }
   
     
@@ -28,7 +30,6 @@ struct BottomSheetView: View {
     
     var body: some View{
         
-        Spacer()
         VStack{
             VStack{
                 HStack{
@@ -47,30 +48,44 @@ struct BottomSheetView: View {
                 
             }
             Button{
+                               let otheramountInt: Int = Int(otheramount) ?? 0
+                               goalVM.AddAmount(balance: otheramountInt, goalCard: goalCards, progress: convertProgressToPersantage) // call the function to add and save the amount
+                               otheramount = ""
+                               
+                               if goalCards.balance > goalCards.goalBalance {
+                                   goalCards.balance = goalCards.goalBalance
+                                   goalCards.progress = convertProgressToPersantage
+                                   
+                      //    Float(Double(goalCard.balance )) // increment 10% each time press the button
+                      }
                 presentationMode.wrappedValue.dismiss()
-                let otheramountInt: Int = Int(otheramount) ?? 0
-                goalVM.AddAmount(balance: otheramountInt, goalCard: goalCards, progress: progressValue) // call the function to add and save the amount
-                otheramount = ""
-                
-                if goalCards.balance > goalCards.goalBalance {
-                    goalCards.balance = goalCards.goalBalance
-                    goalCards.progress = convertProgressToPersantage
-                //    Float(Double(goalCard.balance )) // increment 10% each time press the button
-                }
-            }label: {
-                Text("Text8")
-                    .frame(width:281 , height:41 )
-                    .foregroundColor(.white)
-                    .background(Color("lightBlue"))
-                    .border(.gray)
-                    .cornerRadius(8)
-                    .fontWeight(.semibold)
-            }
+                  }label: {
+                      Text("Text8")
+                          .frame(width:281 , height:41 )
+                          .foregroundColor(.white)
+                          .background(Color("lightBlue"))
+                          .border(.gray)
+                          .cornerRadius(8)
+                          .fontWeight(.semibold)
+                  }
+        
             
         }
+//        Button {
+//            let otheramountInt: Int = Int(otheramount) ?? 2
+//
+//            goalVM.editBalance(goalCard: goalCards, balance: otheramountInt, progress: convertProgressToPersantage)
+//            otheramount = ""
+////            NavigationLink("", destination: editAmount(goalCards: goalCards))
+//        } label: {
+//            Text("edit")
+//        }
+
     }
         
     }
+
+
 //struct BottomSheetView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        let BottomSheetVM = GoalCardViewModel()
@@ -79,3 +94,15 @@ struct BottomSheetView: View {
 //            .environmentObject(BottomSheetVM)
 //    }
 //}
+
+
+
+
+
+
+
+
+
+/*
+ 
+ */

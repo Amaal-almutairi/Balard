@@ -13,7 +13,8 @@ struct ContentView: View {
     @Environment(\.presentationMode) var dismiss
     @State var presentCardGoalView = false
     @StateObject var goalVM = GoalCardViewModel()
-   // @State  var goal:GoalCards
+    // @State  var goal:GoalCards
+    @StateObject var numberOnly:NumbersOnly = NumbersOnly()
 
     var body: some View {
         NavigationView {
@@ -37,46 +38,67 @@ struct ContentView: View {
                             //.accessibilityValue(goalCard.name ?? "your goal")
                                 .accessibilityHint("Tap ‘Add Goal’ to start saving your money")
                         }else{
-                            Form {
+                            List {
                                 ForEach(goalVM.goalCards, id: \.id) {cardGoal in
                                     CardCustomView(goalCard: cardGoal)
-                                } .onDelete(perform:goalVM.deleteCard)
-                                
+                                        .swipeActions(edge: .leading) {
+                                            NavigationLink("Edit", destination:  EditCard(goalCard: cardGoal))
+                                                .tint(.green)
+                                        }
+//                                    NavigationLink("Edit", destination:  EditCard(goalCard: cardGoal))
+                                        
+                                }
+                                .onDelete(perform:goalVM.deleteCard)
+                                    .listRowSeparator(.hidden).listRowBackground(Color.clear)
+//
+                                    
+//                                        Button {
+//
+////                                                let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 1
+////                                                let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
+//////
+////                                            goalVM.editGoal(goalCard: cardGoal, goalName: cardGoal.name ?? "", goalBalance: Int(cardGoal.goalBalance), months: Int(cardGoal.months))
+//                                        } label: {
+//                                            Label("Edit", systemImage: "square.and.pencil")
+//                                        }
+//                                        .tint(.green)
+//                                    }
                             }
+                            .listStyle(.plain)
+                                
+                            
                         }
                         
-                    }
-                    
-                    
-                } .navigationBarTitle(Text("Text1"))
-                    .navigationBarItems(trailing:
-                                            HStack {
-                        Image(systemName: "plus")
-                            .accessibilityLabel("Add Goal")
-                            .accessibilityHint("Add Your Goal")
-                            .foregroundColor(Color("lightGreen"))
-                            .padding(.leading)
-                        Button("Text2") {
-                            showAddGoalSheet.toggle()
-                        }   .accessibilityLabel("Add Goal")
                         
-                            .accessibilityHint("Add Your Goal")
-                            .foregroundColor(.black).padding(.trailing)
-                            .sheet(isPresented: $showAddGoalSheet){
-                                AddGoalSheet()
-                                    .presentationDetents([.height(470)])
-                                    .presentationDragIndicator(.visible)
-                            }
-                    } .modifier(Items.AddGoalBtnModifier())
-                    )}
-            .onAppear(){
-                goalVM.getCard()
+                    } .navigationBarTitle(Text("Text1"))
+                        .navigationBarItems(trailing:
+                                                HStack {
+                            Image(systemName: "plus")
+                                .accessibilityLabel("Text2")
+                                .accessibilityHint("Text25")
+                                .foregroundColor(Color("lightGreen"))
+                                .padding(.leading)
+                            Button("Text2") {
+                                showAddGoalSheet.toggle()
+                            }   .accessibilityLabel("Text2")
+                            
+                                .accessibilityHint("Text25")
+                                .foregroundColor(.black).padding(.trailing)
+                                .sheet(isPresented: $showAddGoalSheet){
+                                    AddGoalSheet()
+                                        .presentationDetents([.height(470)])
+                                        .presentationDragIndicator(.visible)
+                                }
+                        } .modifier(Items.AddGoalBtnModifier())
+                        )}
+                .onAppear(){
+                    goalVM.getCard()
+                }
+                
             }
-            
         }.environmentObject(goalVM)
     }
 }
-
 //struct ContentView_Previews: PreviewProvider {
 //    
 //    static var previews: some View {

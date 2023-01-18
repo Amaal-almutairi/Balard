@@ -57,6 +57,24 @@ class GoalCardViewModel:ObservableObject{
         getCard()
        // goalCards = []
     }
+    
+//    func editGoal(newCardGoal: GoalCards,goalName:String,goalBalance:Int,months:Int) {
+    func editGoal(goalCard: GoalCards,goalName:String,goalBalance:Int,months:Int) {
+        goalCard.name = goalName
+        goalCard.goalBalance = Int64(goalBalance)
+        goalCard.months = Int64(months)
+        saveCardGoal(newCardGoal: goalCard)
+       // getCard()
+       // newCardGoal.balance =
+    }
+    func editBalance(goalCard: GoalCards,balance:Int,progress:Float) {
+        goalCard.balance = Int64(balance)
+        goalCard.progress = progress
+        saveCardGoal(newCardGoal: goalCard)
+       // getCard()
+       // newCardGoal.balance =
+    }
+    
      func saveCardGoal(newCardGoal: GoalCards){
 
         do {
@@ -82,6 +100,16 @@ class GoalCardViewModel:ObservableObject{
        saveCardGoal(newCardGoal: goalCard)
     }
     
-
+//    func delete(cardGoal: GoalCards) {
+//        container.viewContext.delete(cardGoal)
+//
+//        do {
+//            try container.viewContext.save()
+//        }catch let error {
+//            container.viewContext.rollback()
+//            print("error fetching Data \(error)")
+//
+//        }
+//    }
 }
 

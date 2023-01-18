@@ -55,6 +55,8 @@ struct ProgressPage: View {
                     ProgressBar( goalCard: goalCard)//$progressValue binding varible of the state progressValue
                         .frame(width: 160.0, height: 160.0)
                         .padding(20.0)   .onAppear(){
+                            goalVM.getCard()
+
                             if goalCard.balance > goalCard.goalBalance {
                                 goalCard.balance = goalCard.goalBalance
                                 goalCard.progress = convertProgressToPersantage
@@ -99,7 +101,7 @@ struct ProgressPage: View {
             }
             .padding()
             .sheet(isPresented: $showingBottomSheet){
-                BottomSheetView(goalCard: goalCard, progressValue: progressValue, goalCards: goalCard)
+                BottomSheetView(progressValue: progressValue, goalCards: goalCard)
                 
                 //size
                     .presentationDetents([.height(200)]) // by default its display the sheet in medium size "half page" but the user can make the sheet bigger by pull the sheet up , we can do( .presentationDetents([.height(100)])) a hight for the sheet we want , ( .presentationDetents([.height(100), .medium ])) this is display the sheet at 100 and the user can pull up to the half of the screen , .presentationDetents([.medium,.height(600)])
@@ -108,9 +110,16 @@ struct ProgressPage: View {
             
         }
         .navigationTitle(goalCard.name ?? "").navigationBarTitleDisplayMode(.inline)
+//        .navigationBarItems(trailing: {
+//            NavigationLink("Edit", destination: editAmount(goalCard: <#GoalCards#>, progressValue: <#Float#>, goalCards: <#GoalCards#>)
+//        })
         .foregroundColor(Color("darkBlue"))
     }
 }
+
+
+
+
 
 
 //

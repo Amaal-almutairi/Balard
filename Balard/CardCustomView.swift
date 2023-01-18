@@ -25,25 +25,26 @@ struct CardCustomView: View {
                 Color("darkBlue")
                     .background()
                     .modifier(Items.CardShapModifier())
+            
                 VStack(alignment: .trailing){
                     HStack{
                         Text(goalCard.name ?? "Text19")
                             .font(.system(size:30 , weight: .medium))
-                            .accessibilityLabel("Your goal")
-                            .accessibilityValue(goalCard.name ?? "your goal")
-                            .accessibilityHint("Add your goal")
+                            .accessibilityLabel("Text24")
+                            .accessibilityValue(goalCard.name ?? "Text24")
+                            .accessibilityHint("Text25")
                         Spacer()
                         Text("\(goalCard.goalBalance)")
                             .font(.system(size:21 , weight: .regular))
-                            .accessibilityLabel("Target Goal")
+                            .accessibilityLabel("Text27")
                             .accessibilityValue(String(goalCard.goalBalance ))
-                        
+                     
                     }
                     VStack{
                         Text("\(goalCard.balance)")
                             .font(.system(size:16 , weight: .regular))
                             .foregroundColor(Color("ourgrey"))
-                            .accessibilityLabel("You saved")
+                            .accessibilityLabel("Text26")
                             .accessibilityValue(String(goalCard.balance ))
                         
                     }
@@ -58,9 +59,9 @@ struct CardCustomView: View {
                                 
                                print(convertProgressToPersantage)
                             }
-//                            .onAppear(){
-//                                goalCard.progress = 0.00
-//                            }
+                            .onAppear(){
+                                goalVM.getCard()
+                            }
 //                            .onAppear(){
 //                            
 //                            }

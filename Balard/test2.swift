@@ -449,3 +449,76 @@ struct test2_Previews: PreviewProvider {
 
 
  */
+
+
+
+
+//
+//  AddGoalSheet.swift
+//  Balard
+//
+//  Created by Amaal Almutairi on 17/06/1444 AH.
+//
+/*
+import SwiftUI
+
+struct AddGoalSheet: View {
+    @State var name = ""
+    @State var goalBalance = ""
+    @State var months = ""
+    @StateObject var numberOnly:NumbersOnly = NumbersOnly()
+    @EnvironmentObject var goalVM:GoalCardViewModel
+    @Environment(\.presentationMode) var prezsentationMode
+    let goal:GoalCards
+    
+    var body: some View {
+        Form{
+            VStack(alignment: .leading){
+                VStack(alignment: .leading){
+                    Text("Text3")
+                    TextField(name, text: $name)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                } .padding()
+                VStack(alignment: .leading){
+                    Text("Text5")
+                    TextField(goalBalance, text: $numberOnly.goalBalancevalue)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }.padding()
+                VStack(alignment: .leading){
+                    Text("Text7")
+                    TextField(months, text: $numberOnly.monthsvalue)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                }.padding()
+                Button("Text21") {
+                    if name.isEmpty && numberOnly.goalBalancevalue.isEmpty &&  numberOnly.monthsvalue.isEmpty {
+                        let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 1
+                        let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
+                        
+                        goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
+                        goalVM.getCard()
+                        name = ""
+                        numberOnly.goalBalancevalue = ""
+                        numberOnly.monthsvalue = ""
+                        prezsentationMode.wrappedValue.dismiss()
+                        print("add new goal")
+                    }else {
+                       
+                        let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 1
+                        let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
+                        goalVM.editGoal(newCardGoal: goal, goalName: name, goalBalance: goalAmount, months: monthInt)
+                    }
+                    
+                }.modifier(Items.ButtonModifier())
+            }
+            
+        }
+    }
+}
+
+//struct AddGoalSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let goalVM:GoalCardViewModel = GoalCardViewModel()
+//        AddGoalSheet( goal: <#GoalCards#>).environmentObject(goalVM)
+//    }
+//}
+*/

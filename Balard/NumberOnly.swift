@@ -35,4 +35,16 @@ class NumbersOnly: ObservableObject{
         }
     }
     
+    @Published var balanceValue = "" {
+        
+        didSet {
+            
+            let filtered = balanceValue.filter{ $0.isNumber }
+           // let filtered = monthsvalue.filter{ $0.isNumber }
+            if balanceValue != filtered{
+                
+                balanceValue = filtered
+            }
+        }
+    }
 }
