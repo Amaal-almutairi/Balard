@@ -35,7 +35,7 @@ struct Items: View {
         
         func body(content: Content) -> some View {
             content
-                .frame(width: 328, height: 168)
+                //.frame(width: 328, height: 168)
 //                .background(Color("darkBlue"))
                 .cornerRadius(20)
 //                .foregroundColor(.white)

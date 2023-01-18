@@ -16,6 +16,7 @@ struct CardCustomView: View {
     @Environment(\.presentationMode) var prezsentationMode
     @State var presentProgressView = false
     @State  var showCardGoalView = false
+    @State var frameSize: CGFloat = UIScreen.main.bounds.width - 50 // display the content in all iphones in the same size(width only)
     var convertProgressToPersantage:Float {
         goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
     }
@@ -25,7 +26,9 @@ struct CardCustomView: View {
                 Color("darkBlue")
                     .background()
                     .modifier(Items.CardShapModifier())
-            
+                    .frame(width: frameSize , height: 180)// height: 173
+              
+               
                 VStack(alignment: .trailing){
                     HStack{
                         Text(goalCard.name ?? "Text19")
@@ -33,11 +36,13 @@ struct CardCustomView: View {
                             .accessibilityLabel("Text24")
                             .accessibilityValue(goalCard.name ?? "Text24")
                             .accessibilityHint("Text25")
+                            .foregroundColor(.white)
                         Spacer()
                         Text("\(goalCard.goalBalance)")
                             .font(.system(size:21 , weight: .regular))
                             .accessibilityLabel("Text27")
                             .accessibilityValue(String(goalCard.goalBalance ))
+                            .foregroundColor(.white)
                      
                     }
                     VStack{
@@ -46,7 +51,7 @@ struct CardCustomView: View {
                             .foregroundColor(Color("ourgrey"))
                             .accessibilityLabel("Text26")
                             .accessibilityValue(String(goalCard.balance ))
-                        
+                            .padding(.bottom)
                     }
                     HStack(alignment: .center){
                         
@@ -87,9 +92,13 @@ struct CardCustomView: View {
                     }
                     
                     
-                }.padding(.leading).padding(.trailing)
-            }.frame(width: 328, height: 168).foregroundColor(.white)
+                }.padding(.leading).padding(.trailing).padding(.top)
+            }
+            
+            //.frame(width: frameSize)
+            
         }
+        
         .fullScreenCover(isPresented: $presentProgressView){
             ProgressPage( goalCard: goalCard)
             
