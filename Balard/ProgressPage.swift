@@ -55,7 +55,7 @@ struct ProgressPage: View {
                     ProgressBar( goalCard: goalCard)//$progressValue binding varible of the state progressValue
                         .frame(width: 160.0, height: 160.0)
                         .padding(20.0)   .onAppear(){
-                            goalVM.getCard()
+
 
                             if goalCard.balance > goalCard.goalBalance {
                                 goalCard.balance = goalCard.goalBalance
@@ -126,9 +126,9 @@ struct ProgressPage: View {
 //    struct ProgressPage_Previews: PreviewProvider {
 //        static var previews: some View {
 //            let progressVM = GoalCardViewModel()
-//           // ProgressPage(, goalCards: <#GoalCards#>)
+//            ProgressPage(goalCard: progressVM.goalCards[0])
 //                .environmentObject(progressVM)
 //        }
 //    }
-//
+
 

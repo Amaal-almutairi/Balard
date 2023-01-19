@@ -41,10 +41,10 @@ struct ContentView: View {
                             List {
                                 ForEach(goalVM.goalCards, id: \.id) {cardGoal in
                                     CardCustomView(goalCard: cardGoal)
-                                        .swipeActions(edge: .leading) {
-                                            NavigationLink("Edit", destination:  EditCard(goalCard: cardGoal))
-                                                .tint(.green)
-                                        }
+//                                        .swipeActions(edge: .leading) {
+//                                            NavigationLink("Edit", destination:  EditCard(goalCard: cardGoal))
+//                                                .tint(.green)
+//                                        }
 //                                    NavigationLink("Edit", destination:  EditCard(goalCard: cardGoal))
                                         
                                 }
@@ -70,7 +70,7 @@ struct ContentView: View {
                         }
                         
                         
-                    } .navigationBarTitle(Text("Text1"))
+                    } .navigationBarTitle(Text("Text1" + ":" + "\(goalVM.goalCards.count)"))
                         .navigationBarItems(trailing:
                                                 HStack {
                             Image(systemName: "plus")
@@ -91,12 +91,10 @@ struct ContentView: View {
                                 }
                         } .modifier(Items.AddGoalBtnModifier())
                         )}
-                .onAppear(){
-                    goalVM.getCard()
-                }
+
                 
             }
-        }.environmentObject(goalVM)
+        }.environmentObject(goalVM).navigationViewStyle(.stack)
     }
 }
 //struct ContentView_Previews: PreviewProvider {

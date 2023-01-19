@@ -33,7 +33,7 @@ class GoalCardViewModel:ObservableObject{
    
     func getCard(){
         
-        
+        print("Get card ***")
         goalCards = []
         
         let request = NSFetchRequest<GoalCards>(entityName: "GoalCards")
@@ -43,7 +43,7 @@ class GoalCardViewModel:ObservableObject{
         }catch let error {
             print("error fetching Data \(error)")
         }
-        print(goalCards)
+       // print(goalCards)
     }
     // this function allow user to add goalName,goalBalance,months to achive the goal balance
 
@@ -77,12 +77,15 @@ class GoalCardViewModel:ObservableObject{
     
      func saveCardGoal(newCardGoal: GoalCards){
 
-        do {
-            try container.viewContext.save()
-        }catch let error {
-            print("error fetching Data \(error)")
+         container.viewContext.performAndWait {
+             do {
+                 try container.viewContext.save()
+             }catch let error {
+                 print("error fetching Data \(error)")
 
-        }
+             }
+         }
+        
     }
 //     this function allow user to add balance to achive the goal balance
     func AddAmount(balance:Int ,goalCard:GoalCards,progress:Float ) {

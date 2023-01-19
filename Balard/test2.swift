@@ -495,7 +495,7 @@ struct AddGoalSheet: View {
                         let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
                         
                         goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
-                        goalVM.getCard()
+
                         name = ""
                         numberOnly.goalBalancevalue = ""
                         numberOnly.monthsvalue = ""

@@ -51,7 +51,7 @@ struct BottomSheetView: View {
                                let otheramountInt: Int = Int(otheramount) ?? 0
                                goalVM.AddAmount(balance: otheramountInt, goalCard: goalCards, progress: convertProgressToPersantage) // call the function to add and save the amount
                                otheramount = ""
-                               
+                goalVM.getCard()
                                if goalCards.balance > goalCards.goalBalance {
                                    goalCards.balance = goalCards.goalBalance
                                    goalCards.progress = convertProgressToPersantage

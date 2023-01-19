@@ -18,7 +18,13 @@ struct CardCustomView: View {
     @State  var showCardGoalView = false
     @State var frameSize: CGFloat = UIScreen.main.bounds.width - 50 // display the content in all iphones in the same size(width only)
     var convertProgressToPersantage:Float {
-        goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+        if goalCard.goalBalance == 0 {
+            return 0
+        }else{
+            
+             return goalCard.balance == 0 ? 0: Float(goalCard.balance) / Float(goalCard.goalBalance)
+
+        }
     }
     var body: some View {
         VStack{
@@ -62,25 +68,10 @@ struct CardCustomView: View {
                            // .accessibilityValue("\(String(format: "%.0f%%", progress * 100))")
                             .foregroundColor(.white).onAppear(){
                                 
-                               print(convertProgressToPersantage)
+                           //    print(convertProgressToPersantage)
                             }
-                            .onAppear(){
-                                goalVM.getCard()
-                            }
-//                            .onAppear(){
-//                            
-//                            }
-//                            .onAppear(){
-//                                goalCard.progress = 0.00 //intial value 30%
-//                                if (goalCard.progress) > goalCard.goalBalance {
-//                                    goalCard.balance = goalCard.goalBalance
-//                                    self.progress = convertProgressToPersantage
-//                                }else {
-//                                    goalCard.progress += Float(goalCard.balance / 100) // increment 10% each time press the button
-//
-//                                    goalCard.progress -= 1.0 //when it reach tghe value will not increment
-//                                }
-//                            }
+
+
                     }
                     Divider().foregroundColor(.gray).fontWeight(Font.Weight.medium)
                     
