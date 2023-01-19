@@ -18,7 +18,7 @@ struct AddGoalSheet: View {
     
     var body: some View {
         Form{
-            VStack(alignment: .leading){
+            VStack(alignment: .center){
                 VStack(alignment: .leading){
                     Text("Text3")
                     TextField("Text4", text: $name)
@@ -34,19 +34,20 @@ struct AddGoalSheet: View {
                     TextField("Text9", text: $numberOnly.monthsvalue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }.padding()
-                Button("Text21") {
-                    let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 1
-                    let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
-                    
-                    goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
-                    name = ""
-                    numberOnly.goalBalancevalue = ""
-                    numberOnly.monthsvalue = ""
-                    prezsentationMode.wrappedValue.dismiss()
-                    print("add new goal...")
-                }.modifier(Items.ButtonModifier())
+                VStack(alignment: .center){
+                    Button("Text21") {
+                        let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 1
+                        let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
+                        
+                        goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
+                        name = ""
+                        numberOnly.goalBalancevalue = ""
+                        numberOnly.monthsvalue = ""
+                        prezsentationMode.wrappedValue.dismiss()
+                        print("add new goal...")
+                    }.modifier(Items.ButtonModifier())
+                }
             }
-            
         }
     }
 }

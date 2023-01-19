@@ -70,13 +70,13 @@ struct ContentView: View {
                         }
                         
                         
-                    } .navigationBarTitle(Text("Text1" + ":" + "\(goalVM.goalCards.count)"))
+                    } .navigationBarTitle(Text("Text1"))
                         .navigationBarItems(trailing:
                                                 HStack {
                             Image(systemName: "plus")
                                 .accessibilityLabel("Text2")
                                 .accessibilityHint("Text25")
-                                .foregroundColor(Color("lightGreen"))
+                                .foregroundColor(Color("lightBlue"))
                                 .padding(.leading)
                             Button("Text2") {
                                 showAddGoalSheet.toggle()

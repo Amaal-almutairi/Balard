@@ -37,7 +37,7 @@ struct ProgressPage: View {
                         HStack{
                             Image(systemName: "lightbulb")
                                 .font(.system(size: 24))
-                                .foregroundColor(Color("lightGreen"))
+                                .foregroundColor(Color("lightBlue"))
                             //                                Text("You need to save 1500 per month in order to achieve this goal")//change the goal\
                             Text("You need to save per month \(totalAmount) in order to achieve this goal ")
                             //Text("Text16");Text("(totalAmount)");Text("Text17")
