@@ -15,11 +15,12 @@
 ## Technologies & tools :
 
 1. Core data 
-2. Localization 
-3. Accessibility : voice over 
-4. Github 
-5. Sketch 
-6. Xcode 
+2. MVVM
+3. Localization 
+4. Accessibility : voice over 
+5. Github 
+6. Sketch 
+7. Xcode 
 
 ## Challenge Summary:
 https://contattafiles.s3.us-west-1.amazonaws.com/tnt41680/jCyegETd7Y4IN7W/Boosters_MSLE_ADATWQ_2022_2023.pdf
