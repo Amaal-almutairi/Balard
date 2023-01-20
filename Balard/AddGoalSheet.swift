@@ -43,7 +43,7 @@ struct AddGoalSheet: View {
                         }.padding()
                 VStack(alignment: .center){
                     Button("Text21", action: {
-                    //    if !goalBalance.isEmpty {
+                        if !goalBalance.isEmpty {
                             let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 0
                             let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
                             goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
@@ -52,7 +52,7 @@ struct AddGoalSheet: View {
                             numberOnly.goalBalancevalue = ""
                             prezsentationMode.wrappedValue.dismiss()
                             
-                      //  }
+                        }
                     }).modifier(Items.ButtonModifier()) }
               
                    
