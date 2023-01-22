@@ -31,8 +31,17 @@ struct AddGoalSheet: View {
                 VStack(alignment: .leading){
                     Text("Text5")
                     // Text("You need to fill your Target goal !")
-                    TextField("Text6", text: $numberOnly.goalBalancevalue)
+                    
+                    TextField("Text6", text: $numberOnly.goalBalancevalue).alert(isPresented: $showAddCardAlert, content: {
+                        Alert(title:Text("You need to fill your Target goal !"))
+                    })
+                    
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                       // .placeholder(when: numberOnly.goalBalancevalue.isEmpty) {
+//                    Text("Target Goal")
+//                   .foregroundColor(.blue)
+//                   .bold()
+                 //   }
                 }.padding()
                   
                         VStack(alignment: .leading){
@@ -42,18 +51,29 @@ struct AddGoalSheet: View {
                             
                         }.padding()
                 VStack(alignment: .center){
+                    
                     Button("Text21", action: {
-                        if !goalBalance.isEmpty {
-                            let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 0
-                            let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
-                            goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
-                            name = ""
-                            numberOnly.monthsvalue = ""
-                            numberOnly.goalBalancevalue = ""
-                            prezsentationMode.wrappedValue.dismiss()
+                        if validateTex(){
+                         
+                                let goalAmount: Int = Int(numberOnly.goalBalancevalue) ?? 0
+                                let monthInt: Int = Int(numberOnly.monthsvalue) ?? 2
+                          
+                                goalVM.addCardGoal(goalName: name, goalBalance:  goalAmount, months:monthInt)
+                            
+                                name = ""
+                                numberOnly.monthsvalue = ""
+                                numberOnly.goalBalancevalue = ""
+                                prezsentationMode.wrappedValue.dismiss()
+                        }else{
+                            showAddCardAlert = true
                             
                         }
-                    }).modifier(Items.ButtonModifier()) }
+                       
+                    }).alert("You need to fill your Target goal !", isPresented: $showAddCardAlert){
+                        Button("OK", role: .cancel) { }
+                    }
+                  //  .disabled(numberOnly.goalBalancevalue.isEmpty)
+                    .modifier(Items.ButtonModifier()) }
               
                    
 
@@ -62,11 +82,38 @@ struct AddGoalSheet: View {
             }
             
         }
+    func validateTex() -> Bool{
         
+        if !numberOnly.goalBalancevalue.isEmpty {
+            return true
+        }
+        return false
+    }
         
         
     }
 
+
+
+
+struct AddGoalSheet_Previews: PreviewProvider {
+    static var previews: some View {
+        let goalVM:GoalCardViewModel = GoalCardViewModel()
+        AddGoalSheet().environmentObject(goalVM)
+    }
+}
+
+extension View {
+    func placeholder<Content: View> ( when shouldShow: Bool,
+   alignment: Alignment = .leading,
+                                      
+ @ViewBuilder placeholder: () -> Content) -> some View {
+   ZStack(alignment: alignment) {
+     placeholder().opacity(shouldShow ? 1 : 0)
+         self
+        }
+    }
+}
 
 /*
  .alert("List Name", isPresented: $showAddCardAlert, actions: {
@@ -93,10 +140,3 @@ struct AddGoalSheet: View {
  ////                            .foregroundColor(Color.red).font(.caption)
  //                    }
  */
-
-struct AddGoalSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        let goalVM:GoalCardViewModel = GoalCardViewModel()
-        AddGoalSheet().environmentObject(goalVM)
-    }
-}
