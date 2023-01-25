@@ -72,25 +72,41 @@ struct ContentView: View {
                         
                     } .navigationBarTitle(Text("Text1"))
                         .navigationBarItems(trailing:
-                                                HStack {
-                            Image(systemName: "plus")
-                                .accessibilityLabel("Text2")
-                                .accessibilityHint("Text25")
-                                .foregroundColor(Color("lightBlue"))
-                                .padding(.leading)
-                            Button("Text2") {
+                                               // HStack {
+//                            Image(systemName: "plus")
+//                                .accessibilityLabel("Text2")
+//                                .accessibilityHint("Text25")
+//                                .foregroundColor(Color("lightBlue"))
+//                                .padding(.leading)
+                            Button {
                                 showAddGoalSheet.toggle()
-                            }   .accessibilityLabel("Text2")
-                            
-                                .accessibilityHint("Text25")
-                                .foregroundColor(.black).padding(.trailing)
+                            } label: {
+                                HStack{
+                                    Image(systemName: "plus")
+                                    Text("Text2")
+                                }
+                             
+
+                            }.accessibilityLabel("Text2")
+                                       .foregroundColor(.accentColor)
+
+//                            Button("Text2") {
+//                                showAddGoalSheet.toggle()
+//
+//                            }   .accessibilityLabel("Text2")
+//                                .foregroundColor(.accentColor)
+//
+//                                .accessibilityHint("Text25")
+//                                .foregroundColor(.black).padding(.trailing)
                                 .sheet(isPresented: $showAddGoalSheet){
                                     AddGoalSheet()
                                         .presentationDetents([.height(470)])
                                         .presentationDragIndicator(.visible)
                                 }
-                        } .modifier(Items.AddGoalBtnModifier())
-                        )}
+                       // }
+                        )
+                    
+                }
 
                 
             }

@@ -29,11 +29,9 @@ struct AddGoalSheet: View {
                     
                 } .padding()
                 VStack(alignment: .leading){
-                    Text("Text5")
+                    Text("Text20")
                     
-                    TextField("Text6", text: $numberOnly.goalBalancevalue).alert(isPresented: $showAddCardAlert, content: {
-                        Alert(title:Text("You need to fill your Target goal !"))
-                    })
+                    TextField("Text6", text: $numberOnly.goalBalancevalue)
                     
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     
@@ -64,10 +62,12 @@ struct AddGoalSheet: View {
                             
                         }
                         
-                    }).alert("You need to fill your Target goal !", isPresented: $showAddCardAlert){
+                    }).alert("You need to fill your Target goal !", isPresented: $showAddCardAlert, actions: {
                         Button("OK", role: .cancel) { }
-                    }
-                    //  .disabled(numberOnly.goalBalancevalue.isEmpty)
+                    }, message: {
+                        Text("Accept only number")
+                            .foregroundColor(.red)
+                    })
                     .modifier(Items.ButtonModifier()) }
                 
                 

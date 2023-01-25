@@ -38,18 +38,20 @@ struct ProgressPage: View {
                             Image(systemName: "lightbulb")
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("lightBlue"))
-                            //                                Text("You need to save 1500 per month in order to achieve this goal")//change the goal\
-                            Text("You need to save per month \(totalAmount) in order to achieve this goal ")
-                            //Text("Text16");Text("(totalAmount)");Text("Text17")
-                        //    Text("Text16" + "\(totalAmount)" + "Text17" )
-                         // Text("Text23")
-                          //  Text(String(format: "%@ %d %@", text16, totalAmount ,"Text17"))
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("You need to save per month" )
+                                    Text("\(totalAmount)")
+                                    
+                                }
+                                Text("in order to achieve this goal")
+                            }
 
                                 .font(.system(size: 18,weight: .regular))
                                 .foregroundColor(Color("darkBlue"))
                             
                         }
-                    ).padding(.top,-150)
+                    ).padding(.top,-130)
                 
                 VStack{
                     ProgressBar( goalCard: goalCard)//$progressValue binding varible of the state progressValue
